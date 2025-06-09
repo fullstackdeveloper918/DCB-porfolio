@@ -1,0 +1,53 @@
+<section
+  class="h-screen bg-cover bg-center relative transition-all duration-1000"
+>
+  <!-- Background image transition -->
+  <div style="position:absolute; inset:0; z-index:0">
+    <img
+      *ngFor="let img of imageList; let i = index"
+      [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
+      [src]="img"
+      class="w-full h-full object-cover absolute top-0 left-0"
+    />
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-opacity-30 z-10"></div>
+
+  <!-- Navbar -->
+  <div class="absolute top-10 left-0 right-0 z-20 flex justify-between items-center px-10 py-6 text-white">
+    <div class="text-3xl font-bold tracking-widest">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/tradies-diary.appspot.com/o/diary%2Fadmin%2Flogo?alt=media&token=d33d1215-6048-481c-8287-769d632b5fd6"
+        alt="DCB Logo"
+        class="h-10"
+      />
+    </div>
+
+    <nav class="hidden md:flex gap-6 font-light text-lg">
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">About Us</a>
+      <a href="#" class="hover:underline">Projects</a>
+      <a href="#" class="hover:underline">Interiors</a>
+      <a href="#" class="hover:underline">Facts</a>
+      <a href="#" class="hover:underline">NAHB</a>
+      <a href="#" class="hover:underline">Contact Us</a>
+      <a href="#" class="hover:underline">Login</a>
+    </nav>
+
+    <div class="flex items-center gap-4 text-sm">
+      <span class="flex items-center gap-1">
+        <i class="fas fa-user"></i> CLIENT LOGIN
+      </span>
+      <span class="flex items-center gap-1">
+        <i class="fas fa-phone-alt"></i> +61 2 8399 3333
+      </span>
+    </div>
+  </div>
+
+  <!-- Hero Text -->
+  <div class="absolute bottom-10 right-10 z-20 text-white text-right">
+    <h1 class="text-4xl font-light italic">“ BUILD, DON'T TALK ”</h1>
+    <p class="mt-2 text-sm tracking-wide">LUDWIG MIES VAN DER ROHE</p>
+  </div>
+</section>
