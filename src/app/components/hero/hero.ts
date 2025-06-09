@@ -7,10 +7,11 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-hero',
-  imports: [NgStyle, NgFor],
+  imports: [NgStyle, NgFor, Footer],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
   animations: [
