@@ -8,10 +8,11 @@ import {
   transition,
 } from '@angular/animations';
 import { Footer } from "../footer/footer";
+import { ImageComparisonSlider } from "../image-comparison-slider/image-comparison-slider";
 
 @Component({
   selector: 'app-hero',
-  imports: [NgStyle, NgFor, Footer],
+  imports: [NgStyle, NgFor, Footer, ImageComparisonSlider],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
   animations: [
@@ -37,9 +38,21 @@ import { Footer } from "../footer/footer";
 })
 export class Hero {
   imageList: string[] = [
-    'https://www.mbansw.asn.au/sites/default/files/styles/880x660/public/2019-08/9-DCB%20Project%20Cottage%20Point%20051.jpg?itok=QZIAA_-K',
-    'https://images.unsplash.com/photo-1582407947304-fd86f028f716?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D',
-    'https://www.agentadvice.com/wp-content/uploads/2020/12/shutterstock_1247473441-scaled.jpg',
+    '/image 3.png',
+    '/image 8.png',
+    '/2_dcb23856827.jpg',
+    '/20181021-Fitzpatrick-Sugarloaf-Castlecrag__JG_5188-min.jpg',
+    '/B8.jpg',
+    '/B9.jpg',
+    '/B11.jpg',
+    'home15_homepagebanner.jpg',
+    '/home15_homepagebanner1.jpg',
+    '/homebanner_6.jpg',
+    '/homebanner_10.jpg',
+    '/homeslider-23-23-04-25.jpg',
+    '/homeslider-24-23-04-25.jpg',
+    '/homeslider-25-23-04-25.jpg',
+    '/IMG_0004-min.jpg'
   ];
   currentIndex = 0;
   private intervalId: any;

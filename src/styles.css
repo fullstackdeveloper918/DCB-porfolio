@@ -2,9 +2,22 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Zip';
-  src: url('/assets/fonts/proximanova_black.otf') format('otf'),
-       url('/assets/fonts/proximanova_black.ttf') format('ttf');
-  font-weight: normal;
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proximanova_bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proximanova_light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proximanova_italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
 }
