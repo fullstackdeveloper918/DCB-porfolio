@@ -8,9 +8,10 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-new-hero',
-  imports: [ImageComparisonSlider, Footer],
+  imports: [ImageComparisonSlider, Footer, NgFor],
   templateUrl: './new-hero.html',
   styleUrl: './new-hero.css',
    animations: [

@@ -1,14 +1,8 @@
 import { Routes } from '@angular/router';
-import { Hero } from './components/hero/hero';
-import { NewHero } from './components/new-hero/new-hero';
 
 export const routes: Routes = [
     {
         path : '',
-        component : Hero
-    },
-    {
-        path : '/newHero',
-        component : NewHero
+        loadChildren : () => import('../app/components/layout-module').then((m) => m.LayoutModule)
     }
 ];
