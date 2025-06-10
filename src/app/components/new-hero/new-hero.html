@@ -13,6 +13,9 @@
 
   <!-- Overlay -->
   <div class="absolute inset-0 bg-opacity-30 z-10"></div>
+   <!-- Mobile Sidebar -->
+  <app-mobile-sidebar *ngIf="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
+
 
   <!-- Navbar -->
   <div class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec">

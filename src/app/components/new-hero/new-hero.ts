@@ -10,9 +10,10 @@ import {
 } from '@angular/animations';
 import { NgFor } from '@angular/common';
 import { Footernew } from '../footernew/footernew';
+import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
 @Component({
   selector: 'app-new-hero',
-  imports: [ImageComparisonSlider, Footer, NgFor, Footernew],
+  imports: [ImageComparisonSlider, Footer, NgFor, Footernew, MobileSidebar],
   templateUrl: './new-hero.html',
   styleUrl: './new-hero.css',
    animations: [
@@ -56,12 +57,18 @@ export class NewHero {
   ];
   currentIndex = 0;
   private intervalId: any;
+  showMobileMenu = false;
 
   ngOnInit() {
     this.intervalId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.imageList.length;
     }, 5000); // 5 seconds per image
   }
+
+   // TOOGLE MOBILE MENU
+  toggleMobileMenu() {
+  this.showMobileMenu = !this.showMobileMenu;
+}
 
   ngOnDestroy() {
     clearInterval(this.intervalId);
