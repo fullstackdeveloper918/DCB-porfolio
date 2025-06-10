@@ -9,9 +9,10 @@ import {
   transition,
 } from '@angular/animations';
 import { NgFor } from '@angular/common';
+import { Footernew } from '../footernew/footernew';
 @Component({
   selector: 'app-new-hero',
-  imports: [ImageComparisonSlider, Footer, NgFor],
+  imports: [ImageComparisonSlider, Footer, NgFor, Footernew],
   templateUrl: './new-hero.html',
   styleUrl: './new-hero.css',
    animations: [
