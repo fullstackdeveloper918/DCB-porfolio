@@ -8,6 +8,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/ProximaNova-Regular.woff') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 /* Proxima Nova - Bold */
 @font-face {
@@ -16,15 +22,6 @@
   font-weight: 700;
   font-style: normal;
 }
-
-/* Proxima Nova - Bold Italic */
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('/fonts/proximanova_boldit.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-}
-
 /* Proxima Nova - Black */
 @font-face {
   font-family: 'Proxima Nova';
