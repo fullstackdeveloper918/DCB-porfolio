@@ -1,4 +1,4 @@
-import { NgFor, NgStyle } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   trigger,
@@ -9,10 +9,11 @@ import {
 } from '@angular/animations';
 import { Footer } from "../footer/footer";
 import { ImageComparisonSlider } from "../image-comparison-slider/image-comparison-slider";
+import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
 
 @Component({
   selector: 'app-hero',
-  imports: [NgStyle, NgFor, Footer, ImageComparisonSlider],
+  imports: [NgStyle, NgFor, Footer, ImageComparisonSlider, NgIf, MobileSidebar],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
   animations: [
@@ -56,6 +57,7 @@ export class Hero {
   ];
   currentIndex = 0;
   private intervalId: any;
+  showMobileMenu = false;
 
   ngOnInit() {
     this.intervalId = setInterval(() => {
@@ -66,4 +68,9 @@ export class Hero {
   ngOnDestroy() {
     clearInterval(this.intervalId);
   }
+
+  // TOOGLE MOBILE MENU
+  toggleMobileMenu() {
+  this.showMobileMenu = !this.showMobileMenu;
+}
 }
