@@ -4,12 +4,12 @@ import { Hero } from './hero/hero';
 import { NewHero } from './new-hero/new-hero';
 
 const routes: Routes = [
+  // {
+  //   path : '',
+  //   component : Hero
+  // },
   {
     path : '',
-    component : Hero
-  },
-  {
-    path : 'newHero',
     component : NewHero
   }
 ];
