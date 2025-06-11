@@ -1,5 +1,5 @@
 <section
-  class="h-[400px] md:h-screen bg-cover bg-center relative transition-all duration-1000 bannersec"
+  [ngClass]="isHeroModule() ? 'h-[400px] md:h-screen bg-cover bg-center relative transition-all duration-1000 bannersec' : 'md:h-screen bg-cover bg-center relative transition-all duration-1000 bannersec'"
 >
   <!-- Background image transition -->
  @if(isHeroModule()){ <div style="position:absolute; inset:0; z-index:0">
@@ -13,26 +13,26 @@
 }
 
   <!-- Overlay -->
-  <div class="absolute inset-0 bg-opacity-30 z-10"></div>
+  <!-- <div class="absolute inset-0 bg-opacity-30 z-10"></div> -->
 
   <!-- Mobile Sidebar -->
 <app-mobile-sidebar [isOpen]="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
 
   <!-- Navbar -->
-  <div class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec">
+<div [ngClass]="isHeroModule() ? 'absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec' : 'z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-black max-w-full mx-auto '">
     <div class="loogmenu flex justify-start items-center gap-4  lg:gap-10 2xl:gap-15">
 
-      <div class="font-bold tracking-widest w-full max-w-[100px] sm:max-w-[140px] lg:max-w-[180px] 2xl:max-w-[360px] relative top-2 lg:top-4 2xl:top-8">
+      <div (click)="goToHomePage()" class="font-bold tracking-widest w-full max-w-[100px] sm:max-w-[140px] lg:max-w-[180px] 2xl:max-w-[360px] relative  top-0 xs:top-2 lg:top-4 2xl:top-8 cursor-pointer">
       <img
         src="https://firebasestorage.googleapis.com/v0/b/tradies-diary.appspot.com/o/diary%2Fadmin%2Flogo?alt=media&token=d33d1215-6048-481c-8287-769d632b5fd6"
         alt="DCB Logo"
         class=""
-        style='filter: invert(1);'
+        [ngStyle]="isHeroModule() ? { filter: 'invert(1)' } : { filter: 'unset' }"
       />
     </div>
 
 
-    <nav class="hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg">
+    <nav [ngClass]="isHeroModule() ? 'hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg' : 'hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg' ">
       <a href="#" class="hover:underline">Home</a>
       <a href="about-dcb" class="hover:underline">About Us</a>
       <a href="projects" class="hover:underline">Projects</a>

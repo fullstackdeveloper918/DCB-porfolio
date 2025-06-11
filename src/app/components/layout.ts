@@ -1,13 +1,13 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { MobileSidebar } from './mobile-sidebar/mobile-sidebar';
 import { Footer } from './footer/footer';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
-  imports: [NgIf, MobileSidebar,Footer, NgFor, RouterOutlet],
+  imports: [NgIf, MobileSidebar,Footer, NgFor, RouterOutlet, NgClass, NgStyle],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
    animations: [
@@ -53,7 +53,7 @@ export class Layout {
     private intervalId: any;
     showMobileMenu = false;
 
-    constructor(private route : ActivatedRoute){
+    constructor(private route : ActivatedRoute, private router : Router){
       console.log('activate route',  this.route.routeConfig?.path)
     }
 
@@ -74,5 +74,8 @@ export class Layout {
 
   isHeroModule(){
     return this.route.routeConfig?.path === 'Hero';
+  }
+  goToHomePage(){
+    this.router.navigate(['/Hero'])
   }
 }

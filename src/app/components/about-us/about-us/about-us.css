@@ -1,0 +1,11 @@
+.aboutsec{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+@media (max-width:991px){
+    .aboutsec{
+    display: grid;
+    grid-template-columns:1fr;
+}
+}
