@@ -1,15 +1,15 @@
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-sidebar',
-  imports: [NgFor],
+  imports: [NgFor, NgClass],
   templateUrl: './mobile-sidebar.html',
   styleUrl: './mobile-sidebar.css'
 })
 export class MobileSidebar {
  @Output() close = new EventEmitter<void>();
-
+ showMobileMenu: boolean = false
   navLinks = [
     { label: 'Home', href: '#' },
     { label: 'About Us', href: '#' },
