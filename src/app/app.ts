@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
-import { Hero } from './components/hero/hero';
-import { NewHero } from './components/new-hero/new-hero';
+import { Hero } from './components/hero/hero/hero';
+import { NewHero } from './components/new-hero/new-hero/new-hero';
 
 @Component({
   selector: 'app-root',

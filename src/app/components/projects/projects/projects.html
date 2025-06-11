@@ -1,0 +1,29 @@
+<section class="px-4 md:px-16 py-16 text-center">
+  <!-- Heading -->
+  <h1 class="text-4xl font-bold mb-2">Projects</h1>
+  <div class="w-12 h-1 bg-black mx-auto mb-12"></div>
+
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div *ngFor="let project of projects" class="relative group overflow-hidden cursor-pointer">
+      <img [src]="project.image" [alt]="project.title" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
+      <!-- Overlay -->
+      <div
+        *ngIf="project.title"
+        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white"
+      >
+        <h2 class="text-xl font-semibold">{{ project.title }}</h2>
+        <p class="mt-1">See Project →</p>
+      </div>
+
+      <!-- Badge -->
+      <img
+        *ngIf="project.badge"
+        [src]="project.badge"
+        alt="Badge"
+        class="absolute bottom-4 right-4 w-16 h-16"
+      />
+    </div>
+  </div>
+</section>

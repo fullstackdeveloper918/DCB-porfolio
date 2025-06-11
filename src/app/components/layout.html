@@ -2,7 +2,7 @@
   class="h-[400px] md:h-screen bg-cover bg-center relative transition-all duration-1000 bannersec"
 >
   <!-- Background image transition -->
-  <div style="position:absolute; inset:0; z-index:0">
+ @if(isHeroModule()){ <div style="position:absolute; inset:0; z-index:0">
     <img
       *ngFor="let img of imageList; let i = index"
       [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
@@ -10,12 +10,13 @@
       class="w-full h-full object-cover absolute top-0 left-0"
     />
   </div>
+}
 
   <!-- Overlay -->
   <div class="absolute inset-0 bg-opacity-30 z-10"></div>
 
   <!-- Mobile Sidebar -->
-  <app-mobile-sidebar *ngIf="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
+<app-mobile-sidebar [isOpen]="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
 
   <!-- Navbar -->
   <div class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec">
@@ -34,7 +35,7 @@
     <nav class="hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg">
       <a href="#" class="hover:underline">Home</a>
       <a href="about-dcb" class="hover:underline">About Us</a>
-      <a href="#" class="hover:underline">Projects</a>
+      <a href="projects" class="hover:underline">Projects</a>
       <a href="#" class="hover:underline">Interiors</a>
       <a href="#" class="hover:underline">Facts</a>
       <a href="#" class="hover:underline">NAHB</a>
@@ -61,11 +62,7 @@
     </div>
   </div>
 
-  <!-- Hero Text -->
-  <div class="absolute bottom-10 right-4 md:right-10 z-20 text-white text-right">
-    <h1 class="text-[28px] lg:text-5xl textShadow font-medium">“ BUILD, DON'T TALK ”</h1>
-    <p class="mt-2 text-xs md:text-[15px] tracking-wide textShadow">LUDWIG MIES VAN DER ROHE</p>
-  </div>
+   <router-outlet></router-outlet>
 </section>
 <app-footer></app-footer>
 

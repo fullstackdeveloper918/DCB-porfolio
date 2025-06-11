@@ -1,5 +1,5 @@
 import { NgClass, NgFor } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-sidebar',
@@ -8,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './mobile-sidebar.css'
 })
 export class MobileSidebar {
+@Input() isOpen: boolean = false;
  @Output() close = new EventEmitter<void>();
  showMobileMenu: boolean = false
   navLinks = [
@@ -23,4 +24,5 @@ export class MobileSidebar {
   onClose() {
     this.close.emit();
   }
+  
 }

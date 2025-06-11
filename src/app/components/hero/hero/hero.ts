@@ -1,15 +1,22 @@
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
-import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Footer } from '../footer/footer';
-import { NgIf } from '@angular/common';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
+import { Footer } from '../../footer/footer';
+import { ImageComparisonSlider } from '../../image-comparison-slider/image-comparison-slider';
+import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
 
 @Component({
-  selector: 'app-about-us',
-  imports: [MobileSidebar, Footer, NgIf],
-  templateUrl: './about-us.html',
-  styleUrl: './about-us.css',
-   animations: [
+  selector: 'app-hero',
+  imports: [NgStyle, NgFor, Footer, ImageComparisonSlider, NgIf, MobileSidebar],
+  templateUrl: './hero.html',
+  styleUrl: './hero.css',
+  animations: [
     trigger('fadeInOut', [
       state(
         'visible',
@@ -30,8 +37,8 @@ import { NgIf } from '@angular/common';
     ]),
   ],
 })
-export class AboutUs {
- imageList: string[] = [
+export class Hero {
+  imageList: string[] = [
     '/image 3.png',
     '/image 8.png',
     '/2_dcb23856827.jpg',

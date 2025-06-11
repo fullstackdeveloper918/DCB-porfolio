@@ -1,4 +1,3 @@
-import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   trigger,
@@ -7,16 +6,17 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { Footer } from "../footer/footer";
-import { ImageComparisonSlider } from "../image-comparison-slider/image-comparison-slider";
-import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
-
+import { NgFor } from '@angular/common';
+import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
+import { Footer } from '../../footer/footer';
+import { Footernew } from '../../footernew/footernew';
+import { ImageComparisonSlider } from '../../image-comparison-slider/image-comparison-slider';
 @Component({
-  selector: 'app-hero',
-  imports: [NgStyle, NgFor, Footer, ImageComparisonSlider, NgIf, MobileSidebar],
-  templateUrl: './hero.html',
-  styleUrl: './hero.css',
-  animations: [
+  selector: 'app-new-hero',
+  imports: [ImageComparisonSlider, Footer, NgFor, Footernew, MobileSidebar],
+  templateUrl: './new-hero.html',
+  styleUrl: './new-hero.css',
+   animations: [
     trigger('fadeInOut', [
       state(
         'visible',
@@ -37,8 +37,8 @@ import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
     ]),
   ],
 })
-export class Hero {
-  imageList: string[] = [
+export class NewHero {
+ imageList: string[] = [
     '/image 3.png',
     '/image 8.png',
     '/2_dcb23856827.jpg',
@@ -65,12 +65,12 @@ export class Hero {
     }, 5000); // 5 seconds per image
   }
 
-  ngOnDestroy() {
-    clearInterval(this.intervalId);
-  }
-
-  // TOOGLE MOBILE MENU
+   // TOOGLE MOBILE MENU
   toggleMobileMenu() {
   this.showMobileMenu = !this.showMobileMenu;
 }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
 }

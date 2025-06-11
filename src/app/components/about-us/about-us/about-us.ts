@@ -1,21 +1,14 @@
 import { Component } from '@angular/core';
-import { ImageComparisonSlider } from '../image-comparison-slider/image-comparison-slider';
-import { Footer } from '../footer/footer';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
-import { NgFor } from '@angular/common';
-import { Footernew } from '../footernew/footernew';
-import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
+import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Footer } from '../../footer/footer';
+import { NgIf } from '@angular/common';
+
 @Component({
-  selector: 'app-new-hero',
-  imports: [ImageComparisonSlider, Footer, NgFor, Footernew, MobileSidebar],
-  templateUrl: './new-hero.html',
-  styleUrl: './new-hero.css',
+  selector: 'app-about-us',
+  imports: [MobileSidebar, Footer, NgIf],
+  templateUrl: './about-us.html',
+  styleUrl: './about-us.css',
    animations: [
     trigger('fadeInOut', [
       state(
@@ -37,7 +30,7 @@ import { MobileSidebar } from '../mobile-sidebar/mobile-sidebar';
     ]),
   ],
 })
-export class NewHero {
+export class AboutUs {
  imageList: string[] = [
     '/image 3.png',
     '/image 8.png',
@@ -65,12 +58,12 @@ export class NewHero {
     }, 5000); // 5 seconds per image
   }
 
-   // TOOGLE MOBILE MENU
-  toggleMobileMenu() {
-  this.showMobileMenu = !this.showMobileMenu;
-}
-
   ngOnDestroy() {
     clearInterval(this.intervalId);
   }
+
+  // TOOGLE MOBILE MENU
+  toggleMobileMenu() {
+  this.showMobileMenu = !this.showMobileMenu;
+}
 }
