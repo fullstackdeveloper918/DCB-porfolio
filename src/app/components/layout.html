@@ -37,7 +37,33 @@
       <a href="about-dcb" class="hover:underline">About Us</a>
       <a href="projects" class="hover:underline">Projects</a>
       <a href="#" class="hover:underline">Interiors</a>
-      <a href="#" class="hover:underline">Facts</a>
+       <div class="relative group">
+    <a href="#" class="hover:underline">Facts</a>
+
+    <div
+      class="absolute top-full left-0 mt-2 bg-white shadow-xl rounded-md w-[800px] p-6 z-50 hidden group-hover:flex gap-6 transition-all duration-300"
+    >
+      <div class="flex flex-col gap-3 w-1/2 text-black text-sm">
+        <a href="/before-you-build" class="hover:text-blue-600 transition-colors">Before Building</a>
+        <a routerLink="/architects" class="hover:text-blue-600 transition-colors">Architects</a>
+        <a routerLink="/timing" class="hover:text-blue-600 transition-colors">Timing to Consider</a>
+        <a routerLink="/expenses" class="hover:text-blue-600 transition-colors">Expenses to Consider</a>
+        <a routerLink="/housekeeping" class="hover:text-blue-600 transition-colors">Housekeeping</a>
+        <a routerLink="/alterations" class="hover:text-blue-600 transition-colors">Alterations & Additions</a>
+      </div>
+      <div class="w-1/2">
+        <img
+          src="https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg"
+          alt="Facts Preview"
+          class="w-full h-auto rounded-md shadow-md object-cover"
+        />
+        <a routerLink="/facts" class="inline-block mt-3 text-blue-700 font-semibold hover:underline">
+          Facts →
+        </a>
+      </div>
+    </div>
+  </div>
+
       <a href="#" class="hover:underline">NAHB</a>
       <a href="#" class="hover:underline">Contact Us</a>
       <a href="#" class="hover:underline">Login</a>
@@ -60,7 +86,7 @@
         <i class="fas fa-phone-alt"></i> +61 2 8399 3333
       </span>
     </div>
-  </div>
+</div>
 
    <router-outlet></router-outlet>
 </section>

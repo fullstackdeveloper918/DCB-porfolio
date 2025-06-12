@@ -29,6 +29,11 @@ const routes: Routes = [
     path : 'projects',
     component : Layout,
     loadChildren : () => import('../components/projects/projects-module').then((m)=>m.ProjectsModule)
+  },
+  {
+    path : 'before-you-build',
+    component : Layout,
+    loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
   }
 ];
 
