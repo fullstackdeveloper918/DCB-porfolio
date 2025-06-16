@@ -1,0 +1,8 @@
+.innerWraperproject:hover .projectContent {
+    transform: translateY(0);
+}
+
+.projectContent {
+    transform: translateY(20%);
+    transition: .5s all;
+}

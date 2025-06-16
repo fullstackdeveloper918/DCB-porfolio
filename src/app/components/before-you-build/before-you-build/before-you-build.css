@@ -1,0 +1,4 @@
+.contentDiv p a , .contentDiv ul li a, .contentDiv ul li strong{
+    color: #000 !important;
+    font-weight:600;
+}

@@ -1,23 +1,24 @@
-<section class="max-w-7xl mx-auto px-4 py-12">
+<section class="mx-auto *:py-12">
   <!-- Heading -->
   <div class="text-center mb-12">
-    <h1 class="text-4xl font-bold">Before You Build</h1>
-    <div class="mt-2 w-12 h-1 bg-black mx-auto"></div>
+
+      <h1 class="text-5xl font-bold mb-2 text-[#1C1E1F]">Before You Build</h1>
+  <div class="w-7 md:w-16 h-[2px] bg-black mx-auto mt-6 mb-10"></div>
   </div>
 
   <!-- Main Content -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- Left Text + Image -->
-    <div>
+  <div class="mainBannercontent relative" style="padding: 0px !important;">
+    
+    <div class="col-span-4 col-start-3 py-4 text-sm 2xl:text-lg contentDiv absolute top-0 bottom-0 left-0 xl:left-[20%] bg-white max-w-[680px] h-full px-4 md:px-8 py-6 md:py-16">
         <div [innerHTML]="routeBasedContent"></div>
     </div>
 
     <!-- Right Image -->
-    <div>
+    <div class="w-full min-h-screen[500px] h-[550px] ">
       <img
         [src]='routeBasedImage'
         alt="Interior Preview"
-        class="w-full h-auto rounded-md shadow-lg object-cover"
+        class="w-full h-full object-cover"
       />
     </div>
   </div>
