@@ -1,7 +1,18 @@
-.aboutsec{
+/* .aboutsec{
     display: grid;
     grid-template-columns: 2fr 9fr;
     align-items: flex-start;
+} */
+.aboutsec{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+}
+.aboutsec  img {
+    height: 1000px;
+    object-position: top;
+    object-fit: cover;
+    margin-top: -110px;
 }
 /* staf css */
 .caption {

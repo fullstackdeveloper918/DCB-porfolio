@@ -3,10 +3,12 @@ import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Footer } from '../../footer/footer';
 import { NgIf } from '@angular/common';
+import { ScrollImage } from '../../scroll-image/scroll-image';
+
 
 @Component({
   selector: 'app-about-us',
-  imports: [MobileSidebar, Footer, NgIf],
+  imports: [MobileSidebar, Footer, NgIf, ScrollImage],
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
    animations: [
