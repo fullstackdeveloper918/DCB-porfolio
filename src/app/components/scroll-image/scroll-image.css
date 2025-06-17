@@ -7,6 +7,9 @@
 .names {
   flex: 1;
 }
+.names>div:last-child{
+  margin-bottom: 5rem;
+}
 .name {
   margin-bottom: 2rem;
   opacity: 0.5;
