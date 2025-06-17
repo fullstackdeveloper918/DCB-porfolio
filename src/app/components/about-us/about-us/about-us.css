@@ -93,3 +93,7 @@ h3.titlename {
     gap: 5px;
 }
 }
+
+.reveal-line {
+  will-change: transform, opacity;
+}

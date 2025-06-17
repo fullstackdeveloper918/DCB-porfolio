@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Footer } from '../../footer/footer';
 import { NgIf } from '@angular/common';
 import { ScrollImage } from '../../scroll-image/scroll-image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-about-us',
@@ -33,6 +36,7 @@ import { ScrollImage } from '../../scroll-image/scroll-image';
   ],
 })
 export class AboutUs {
+@ViewChild('textSection', { static: true }) textSection!: ElementRef;
  imageList: string[] = [
     '/image 3.png',
     '/image 8.png',
@@ -68,4 +72,23 @@ export class AboutUs {
   toggleMobileMenu() {
   this.showMobileMenu = !this.showMobileMenu;
 }
+
+ngAfterViewInit() {
+  const lines = this.textSection.nativeElement.querySelectorAll('.reveal-line');
+
+  lines.forEach((line: HTMLElement) => {
+    gsap.from(line, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: line,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+    });
+  });
+}
+
 }
