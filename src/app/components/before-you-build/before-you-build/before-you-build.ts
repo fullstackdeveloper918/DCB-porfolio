@@ -12,6 +12,7 @@ export class BeforeYouBuild implements OnInit{
 
   routeBasedContent: SafeHtml | null = null;
   routeBasedImage:string = ''
+  routeBasedTitle!: string
 
   constructor(private router : Router, private sanitizer : DomSanitizer){}
 
@@ -54,6 +55,7 @@ export class BeforeYouBuild implements OnInit{
           </p>
         </div>
       `;
+      this.routeBasedTitle = 'Before You Build'
       this.routeBasedContent = this.sanitizer.bypassSecurityTrustHtml(content);
       this.routeBasedImage = 'https://www.dcb.com.au/wp-content/uploads/2020/09/Proj_3_bg.jpg'
     }

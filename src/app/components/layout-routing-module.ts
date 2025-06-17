@@ -34,6 +34,21 @@ const routes: Routes = [
     path : 'before-you-build',
     component : Layout,
     loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
+  }, 
+  {
+    path : '20-clubs',
+    component : Layout,
+    loadChildren : () => import('../components/nahb/nahb-module').then((m)=>m.NahbModule)
+  },
+  {
+    path : 'contact-us',
+    component : Layout,
+    loadChildren : () => import('../components/contact-us/contact-us-module').then((m)=> m.ContactUsModule)
+  },
+  {
+    path : 'client-login',
+    component : Layout,
+    loadChildren : () => import('../components/login/login-module').then((m) => m.LoginModule)
   }
 ];
 
