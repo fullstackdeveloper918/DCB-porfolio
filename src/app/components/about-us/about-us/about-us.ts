@@ -97,13 +97,14 @@ ngAfterViewInit() {
     const lines = section.nativeElement.querySelectorAll('.reveal-line');
 
     lines.forEach((line: HTMLElement) => {
-      // Split line text into word spans
+   
       const words = line.textContent?.trim().split(' ') || [];
-      line.innerHTML = ''; // Clear original text
+      line.innerHTML = ''; 
 
       words.forEach((word, index) => {
         const wordSpan = document.createElement('span');
-        wordSpan.textContent = word + ' '; // retain space
+        wordSpan.textContent = word + ' ';
+        wordSpan.innerHTML = word + '&nbsp;';
         wordSpan.style.display = 'inline-block';
         wordSpan.style.overflow = 'hidden';
         line.appendChild(wordSpan);
@@ -122,9 +123,10 @@ ngAfterViewInit() {
       tl.from(wordSpans, {
         y: 50,
         opacity: 0.4,
-        duration: 0.6,
+        duration: 1,
         ease: 'power3.out',
         stagger: 0.01,
+        height:0,
       });
     });
   });

@@ -6,15 +6,27 @@
     transform: translateY(20%);
     transition: .5s all;
 }
+.productImage {
+    height: calc(100vh - 15vw);
+    align-items: end;
+}
 
+.productImage>div img {
+    height: calc(100% - 100px);
+}
+
+.productImage>div:nth-child(2n) {
+    height: fit-content !important;
+}
 .scroll-smooth {
   scroll-behavior: smooth;
 }
 .productImage>div{
     transition: .5s all;
+    height: 100%;
 }
 .productImage>div:nth-child(even) img{
-  height: 350px;
+  height: 22rem;
   object-fit: cover;
   width: 100%;
 }
@@ -39,7 +51,10 @@
 
 @media (max-width:1536px){
   .productImage>div:nth-child(even) img{
-  height: 220px;
+  height: 18rem;
+}
+.productImage {
+    height: calc(100vh - 18vw);
 }
 }
 
