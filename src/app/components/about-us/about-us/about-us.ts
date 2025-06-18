@@ -54,6 +54,22 @@ export class AboutUs {
     '/homeslider-25-23-04-25.jpg',
     '/IMG_0004-min.jpg'
   ];
+
+  awardImages : string [] = [
+    'https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-nationalwinner.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-5m.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-2-4m.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-1-6m.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-finalisst-2-6m.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-MBOY.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/nationalresidentialbuilding.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-housingaward-6m.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-housingaward-5m.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-BestUseofTimber.png',
+    'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-MBOY-finalist.png '
+
+  ]
   currentIndex = 0;
   private intervalId: any;
   showMobileMenu = false;

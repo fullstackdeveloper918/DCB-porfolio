@@ -194,31 +194,9 @@
 
   <!-- Awards Section -->
   <div class="md:flex flex-wrap justify-center items-center gap-0 grid grid-cols-3">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/06/2023-nationalwinner.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png" alt="Award 1"
-      class="h-full md:h-35" />
-
+    @for(image of awardImages;track image){
+      <img [src]='image' alt="Award 1"
+      class="h-full md:h-35" />}
     <!-- Add the rest similarly -->
   </div>
 

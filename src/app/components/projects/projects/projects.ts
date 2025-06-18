@@ -1,13 +1,21 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { fadeInRight } from '../../../utils/common-functions';
 
 @Component({
   selector: 'app-projects',
   imports: [NgFor, NgIf],
   templateUrl: './projects.html',
-  styleUrl: './projects.css'
+  styleUrl: './projects.css',
+  animations : [fadeInRight]
 })
-export class Projects {
+export class Projects implements AfterViewInit{
+ 
+  @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+
+  visibleProjects = new Set<number>();
+  observer!: IntersectionObserver;
 
    projects = [
     {
@@ -71,4 +79,36 @@ export class Projects {
       badge: '',
     },
   ];
+
+
+ ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = this.projectElements.toArray().findIndex(
+            (el) => el.nativeElement === entry.target
+          );
+          if (entry.isIntersecting) {
+            this.visibleProjects.add(index);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    this.projectElements.forEach((el) => {
+      this.observer.observe(el.nativeElement);
+    });
+
+    this.scrollContainer.nativeElement.addEventListener('wheel', (event: WheelEvent) => {
+      if (event.deltaY !== 0) {
+        event.preventDefault(); 
+        this.scrollContainer.nativeElement.scrollLeft += event.deltaY;
+      }
+    }, { passive: false });
+  }
+
+   isVisible(index: number): boolean {
+    return this.visibleProjects.has(index);
+  }
 }
