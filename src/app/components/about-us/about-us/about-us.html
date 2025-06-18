@@ -60,10 +60,10 @@
 
   <!-- Staff Heading -->
   <!-- Staff Heading -->
-   <div class="text-left lg:px-5">
+   <div #textSection class="text-left lg:px-5">
 
-     <h4 class="text-lg lg:mt-8 ">(Our team)</h4>
-     <h2 class="text-3xl leading-3xl  md:text-4xl xl:text-7xl 2xl:text-[100px] max-w-[80%] font-bold mt-2 lg:mt-8 mb-6 uppercase md:leading-[.8] teammainHeading">MEET THE TEAM
+     <h4 class="reveal-line text-lg lg:mt-8 ">(Our team)</h4>
+     <h2  class="reveal-line text-3xl leading-3xl  md:text-4xl xl:text-7xl 2xl:text-[100px] max-w-[80%] font-bold mt-2 lg:mt-8 mb-6 uppercase md:leading-[.8] teammainHeading">MEET THE TEAM
        behind the designs</h2>
        
       </div>
@@ -79,128 +79,25 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:flex lg:hidden xl:flex-nowrap flex-wrap xl:justify-center justify-start gap-[10px] mb-10">
 
+  @for (team of teams; track team) {  
     <div class="imageContaentbox">
-      <img src="https://www.dcb.com.au/wp-content/uploads/2022/12/edit-Jonny-Scott.jpg"
+      <img [src]="team.image"
         class="w-full lg:h-full object-cover " alt="Staff 1" />
       <div class="caption">
         <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
+          <h3 class="titlename">{{team.name}}</h3>
         </div>
-        <p>Construction Manager</p>
-      </div>
+        <p>{{team.role}}</p>
+      </div>  
     </div>
-
-        <div class="imageContaentbox">
- <img src="https://www.dcb.com.au/wp-content/uploads/2022/12/edit-EthanFlanagan.jpg"
-      class="w-full lg:h-full object-cover" alt="Staff 2" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-        <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/02/jackcheckley.jpg"
-      class="w-full lg:h-full object-cover" alt="Staff 3" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-
-       <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2022/05/JACK-RADFORD.jpg"
-      class="w-full lg:h-full object-cover" alt="Staff 1" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-
-    <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/06/sam_salarvand.jpg"
-      class="w-full lg:h-full object-cover" alt="Staff 2" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-
-    <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2022/12/edit-Helen-Carter.jpg"
-      class="w-full lg:h-full object-coverrounded shadow" alt="Staff 3" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-
-    <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2022/05/STEFANIA-TOUFAN.jpg"
-      class="w-full lg:h-full object-coverrounded shadow" alt="Staff 1" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-    <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2024/05/MichaelBrown.jpg"
-      class="w-full lg:h-full object-coverrounded shadow" alt="Staff 2" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-        <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2022/12/edit-KylieRose.jpg"
-      class="w-full lg:h-full object-coverrounded shadow" alt="Staff 3" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-
-
-    <div class="imageContaentbox">
-    <img src="https://www.dcb.com.au/wp-content/uploads/2022/05/MARK-QUEALEY.jpg"
-      class="w-full lg:h-full object-cover" alt="Staff 1" />
-      <div class="caption">
-        <div class="title-cover">
-          <h3 class="titlename">Jonny Scott </h3>
-        </div>
-        <p>Construction Manager</p>
-      </div>
-    </div>
-  </div>
-
+  }
   <!-- Awards Section -->
   <div class="md:flex flex-wrap justify-center items-center gap-0 grid grid-cols-3">
     @for(image of awardImages;track image){
       <img [src]='image' alt="Award 1"
       class="h-full md:h-35" />}
     <!-- Add the rest similarly -->
+  </div>
   </div>
 
 </section>

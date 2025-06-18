@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Footer } from '../../footer/footer';
@@ -6,6 +6,7 @@ import { NgIf } from '@angular/common';
 import { ScrollImage } from '../../scroll-image/scroll-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Team } from '../../../utils/Data';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,7 +37,7 @@ gsap.registerPlugin(ScrollTrigger);
   ],
 })
 export class AboutUs {
-@ViewChild('textSection', { static: true }) textSection!: ElementRef;
+@ViewChildren('textSection') textSections!: QueryList<ElementRef>;
  imageList: string[] = [
     '/image 3.png',
     '/image 8.png',
@@ -54,6 +55,8 @@ export class AboutUs {
     '/homeslider-25-23-04-25.jpg',
     '/IMG_0004-min.jpg'
   ];
+
+  teams = Team
 
   awardImages : string [] = [
     'https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png',
@@ -90,19 +93,21 @@ export class AboutUs {
 }
 
 ngAfterViewInit() {
-  const lines = this.textSection.nativeElement.querySelectorAll('.reveal-line');
+  this.textSections.forEach(section => {
+    const lines = section.nativeElement.querySelectorAll('.reveal-line');
 
-  lines.forEach((line: HTMLElement) => {
-    gsap.from(line, {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: line,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
+    lines.forEach((line: HTMLElement) => {
+      gsap.from(line, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: line,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      });
     });
   });
 }

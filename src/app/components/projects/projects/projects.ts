@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { fadeInRight } from '../../../utils/common-functions';
 
 @Component({
@@ -9,7 +9,7 @@ import { fadeInRight } from '../../../utils/common-functions';
   styleUrl: './projects.css',
   animations : [fadeInRight]
 })
-export class Projects implements AfterViewInit{
+export class Projects implements AfterViewInit, OnDestroy{
  
   @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
@@ -100,15 +100,30 @@ export class Projects implements AfterViewInit{
       this.observer.observe(el.nativeElement);
     });
 
-    this.scrollContainer.nativeElement.addEventListener('wheel', (event: WheelEvent) => {
-      if (event.deltaY !== 0) {
-        event.preventDefault(); 
-        this.scrollContainer.nativeElement.scrollLeft += event.deltaY;
-      }
-    }, { passive: false });
+    this.scrollContainer.nativeElement.addEventListener('wheel',this.handleWheelEvent, { passive: false });
   }
+
+  handleWheelEvent = (event: WheelEvent) => {
+  if (event.deltaY !== 0) {
+    event.preventDefault();
+    const scrollSpeedMultiplier = 3.5;
+    this.scrollContainer.nativeElement.scrollLeft += event.deltaY * scrollSpeedMultiplier;
+    }
+  };
+
 
    isVisible(index: number): boolean {
     return this.visibleProjects.has(index);
   }
+
+  ngOnDestroy(): void {
+  if (this.observer) {
+    this.observer.disconnect();
+  }
+
+  if (this.scrollContainer && this.scrollContainer.nativeElement) {
+    this.scrollContainer.nativeElement.removeEventListener('wheel', this.handleWheelEvent, { passive: false } as any);
+  }
+}
+
 }

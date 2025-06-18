@@ -75,6 +75,10 @@ export class Layout {
   isHeroModule(){
     return this.route.routeConfig?.path === 'Hero';
   }
+
+  isProjectModule(){
+    return this.route.routeConfig?.path == 'projects';
+  }
   goToHomePage(){
     this.router.navigate(['/Hero'])
   }
