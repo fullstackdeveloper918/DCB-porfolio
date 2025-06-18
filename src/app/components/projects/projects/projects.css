@@ -10,3 +10,52 @@
 .scroll-smooth {
   scroll-behavior: smooth;
 }
+.productImage>div{
+    transition: .5s all;
+}
+.productImage>div:nth-child(even) img{
+  height: 350px;
+  object-fit: cover;
+  width: 100%;
+}
+.productImage::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+.productImage::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+/* Handle */
+.productImage::-webkit-scrollbar-thumb {
+  background: #ffffff; 
+}
+
+/* Handle on hover */
+.productImage::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; 
+}
+
+@media (max-width:1536px){
+  .productImage>div:nth-child(even) img{
+  height: 220px;
+}
+}
+
+@media (max-width:767px){
+  .productImage {
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+}
+.productImage>div:nth-child(even) img{
+  height: 100%;
+}
+.productImage  > div{
+    width: 100%;
+    max-width: 100%;
+}
+}
+

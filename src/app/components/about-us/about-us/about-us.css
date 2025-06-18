@@ -73,10 +73,23 @@ h3.titlename {
 }
 
 /* staff css end */
+@media (min-width:1800px){
+    .teammainHeading{
+        font-size: 140px !important;
+    }
+}
+@media (max-width:1366px){
+    .aboutsec img{
+    height: 500px;
+}
+}
 @media (max-width:991px){
     .aboutsec{
     display: grid;
     grid-template-columns:1fr;
+}
+    .aboutsec img{
+    height: 350px;
 }
 
 }
@@ -84,14 +97,34 @@ h3.titlename {
 @media (max-width:767px){
     .imageContaentbox {
     max-width: 100%;
-    margin: 0% 8% 0% 8%;
+    /* margin: 0% 8% 0% 8%; */
     width: 100%;
 }
-.caption{
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    .aboutsec img{
+    height: fit-content;
 }
+.caption{
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+    position: unset;
+    transform: unset;
+    opacity: 1;
+    width: 100%;
+    padding-inline: 0px;
+    background: transparent;
+}
+h3.titlename {
+    color: #111;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.caption p {
+    color: #8d8d8d;
+    font-size: 14px;
+}
+
 }
 
 .reveal-line {

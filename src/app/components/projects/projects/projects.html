@@ -1,39 +1,43 @@
-<section class="px-4 py-16 text-center">
-  <h1 class="text-5xl font-bold mb-2 text-[#1C1E1F]">Projects</h1>
-  <div class="w-7 md:w-16 h-[2px] bg-black mx-auto mt-6 mb-10"></div>
+<section class="px-4 2xl:py-20 py-10">
+    <h1 class=" text-3xl md:text-6xl xl::text-8xl font-bold mt-2 xl:mt-4 mb-2 text-black uppercase  md:hidden block">Projects</h1>
+
+  <!-- <div class="w-7 md:w-16 h-[2px] bg-black mx-auto mt-6 mb-10"></div> -->
 
   <!-- Horizontal Scroll Container -->
-  <div class="overflow-x-auto whitespace-nowrap flex gap-6 scroll-smooth px-4 md:px-16"   #scrollContainer>
+  <div class="overflow-x-auto whitespace-nowrap flex gap-4 scroll-smooth px-1 productImage items-end"   #scrollContainer>
     <div
       *ngFor="let project of projects; let i = index"
       #projectItem
-      class="inline-block min-w-[300px] max-w-[300px] relative group overflow-hidden cursor-pointer"
+      class="inline-block 2xl:min-w-[470px] min-w-[300px] max-w-[300px] 2xl:max-w-[470px] relative group overflow-hidden cursor-pointer"
       [@fadeInRight]="isVisible(i) ? 'in' : null"
     >
       <img
         [src]="project.image"
         [alt]="project.title"
-        class="w-100 h-100 object-cover transition-transform duration-500 group-hover:scale-105"
+        class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
       <!-- Overlay -->
+               <!-- absolute inset-0 bg-[#000000A8]         opacity-0  -->
       <div
         *ngIf="project.title"
-        class="absolute inset-0 bg-[#000000A8] uppercase opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center text-white px-4 py-6"
+        class="uppercase group-hover:opacity-100 transition duration-300 flex items-end justify-start text-black px-0 py-6"
       >
         <div>
-          <h2 class="text-lg font-normal">{{ project.title }}</h2>
+          <h2 class="text-lg md:text-md xl:text-xl font-semibold">{{ project.title }}</h2>
           <p class="mt-1 text-sm">See Project ⟶</p>
         </div>
       </div>
 
       <!-- Badge -->
-      <img
+      <!-- <img
         *ngIf="project.badge"
         [src]="project.badge"
         alt="Badge"
         class="absolute bottom-4 right-4 w-12 h-12"
-      />
+      /> -->
     </div>
   </div>
+
+    <h1 class=" text-3xl md:text-6xl xl::text-8xl font-bold mt-2 xl:mt-4 mb-2 text-black uppercase hidden md:block">Projects</h1>
 </section>
