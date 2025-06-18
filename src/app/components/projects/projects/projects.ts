@@ -13,6 +13,7 @@ export class Projects implements AfterViewInit, OnDestroy{
  
   @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  @ViewChild('sectionContainer') sectionContainer!: ElementRef;
 
   visibleProjects = new Set<number>();
   observer!: IntersectionObserver;
@@ -82,31 +83,30 @@ export class Projects implements AfterViewInit, OnDestroy{
 
 
  ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = this.projectElements.toArray().findIndex(
-            (el) => el.nativeElement === entry.target
-          );
-          if (entry.isIntersecting) {
-            this.visibleProjects.add(index);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    this.projectElements.forEach((el) => {
-      this.observer.observe(el.nativeElement);
+  this.observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const index = this.projectElements.toArray().findIndex(
+        (el) => el.nativeElement === entry.target
+      );
+      if (entry.isIntersecting) {
+        this.visibleProjects.add(index);
+      }
     });
+  }, { threshold: 0.2 });
 
-    this.scrollContainer.nativeElement.addEventListener('wheel',this.handleWheelEvent, { passive: false });
-  }
+  this.projectElements.forEach((el) => {
+    this.observer.observe(el.nativeElement);
+  });
+
+  // Scroll horizontally when wheel is triggered anywhere in section
+  this.sectionContainer.nativeElement.addEventListener('wheel', this.handleWheelEvent, { passive: false });
+}
+
 
   handleWheelEvent = (event: WheelEvent) => {
   if (event.deltaY !== 0) {
     event.preventDefault();
-    const scrollSpeedMultiplier = 3.5;
+    const scrollSpeedMultiplier = 2;
     this.scrollContainer.nativeElement.scrollLeft += event.deltaY * scrollSpeedMultiplier;
     }
   };

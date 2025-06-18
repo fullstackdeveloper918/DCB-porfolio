@@ -97,19 +97,38 @@ ngAfterViewInit() {
     const lines = section.nativeElement.querySelectorAll('.reveal-line');
 
     lines.forEach((line: HTMLElement) => {
-      gsap.from(line, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
+      // Split line text into word spans
+      const words = line.textContent?.trim().split(' ') || [];
+      line.innerHTML = ''; // Clear original text
+
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.textContent = word + ' '; // retain space
+        wordSpan.style.display = 'inline-block';
+        wordSpan.style.overflow = 'hidden';
+        line.appendChild(wordSpan);
+      });
+
+      const wordSpans = line.querySelectorAll('span');
+
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: line,
           start: 'top 85%',
           toggleActions: 'play none none none',
-        },
+        }
+      });
+
+      tl.from(wordSpans, {
+        y: 50,
+        opacity: 0.4,
+        duration: 0.6,
+        ease: 'power3.out',
+        stagger: 0.01,
       });
     });
   });
 }
+
 
 }
