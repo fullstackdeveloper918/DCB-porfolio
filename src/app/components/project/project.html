@@ -1,0 +1,32 @@
+
+ <div class="flex justify-center">
+ <h1 class="text-5xl font-bold mb-2 text-[#1C1E1F]">{{id}}</h1>
+   </div>
+   <div class="flex justify-center"> 
+      <div class="w-7 md:w-16 h-[2px] bg-black mx-auto mt-6 mb-10"></div>
+      </div>
+<div class="gallery-image">
+ @for (image of images; track image; let i = $index) { <div
+    class="img-box"
+    (click)="openDialog(i)"
+  >
+    <img [src]="image.url" [alt]="image.caption" />
+    <div class="transparent-box">
+      <!-- <div class="caption">
+        <p>{{ image.caption }}</p>
+        <p class="opacity-low">{{ image.subcaption }}</p>
+      </div> -->
+    </div>
+  </div>
+}
+</div>
+
+<!-- Dialog -->
+<div class="dialog" *ngIf="isDialogOpen">
+  <div class="dialog-content">
+    <button class="close-btn" (click)="closeDialog()">×</button>
+    <img [src]="images[currentIndex].url" />
+    <button class="nav-btn left" (click)="prevImage()">&#10094;</button>
+    <button class="nav-btn right" (click)="nextImage()">&#10095;</button>
+  </div>
+</div>

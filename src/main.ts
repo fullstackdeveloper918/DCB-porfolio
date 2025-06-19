@@ -6,8 +6,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 bootstrapApplication(App, {
     ...appConfig,
     providers: [
-        ...(appConfig.providers || []),
-        provideAnimations()
+    ...(appConfig.providers || []),
+    provideAnimations()
     ]
 })
-  .catch((err) => console.error(err));
+.catch((err) => console.error(err));
