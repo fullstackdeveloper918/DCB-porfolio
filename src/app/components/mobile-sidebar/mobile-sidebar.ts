@@ -1,9 +1,9 @@
-import { NgClass, NgFor } from '@angular/common';
+import {NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mobile-sidebar',
-  imports: [NgFor, NgClass],
+  imports: [NgFor],
   templateUrl: './mobile-sidebar.html',
   styleUrl: './mobile-sidebar.css'
 })

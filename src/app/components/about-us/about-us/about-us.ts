@@ -1,8 +1,5 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Footer } from '../../footer/footer';
-import { NgIf } from '@angular/common';
 import { ScrollImage } from '../../scroll-image/scroll-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-about-us',
-  imports: [MobileSidebar, Footer, NgIf, ScrollImage],
+  imports: [ScrollImage],
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
    animations: [

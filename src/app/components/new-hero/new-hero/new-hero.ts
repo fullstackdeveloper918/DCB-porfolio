@@ -8,12 +8,11 @@ import {
 } from '@angular/animations';
 import { NgFor } from '@angular/common';
 import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
-import { Footer } from '../../footer/footer';
 import { Footernew } from '../../footernew/footernew';
 import { ImageComparisonSlider } from '../../image-comparison-slider/image-comparison-slider';
 @Component({
   selector: 'app-new-hero',
-  imports: [ImageComparisonSlider, Footer, NgFor, Footernew, MobileSidebar],
+  imports: [ImageComparisonSlider, NgFor, Footernew, MobileSidebar],
   templateUrl: './new-hero.html',
   styleUrl: './new-hero.css',
    animations: [
