@@ -14,14 +14,15 @@
 }
 
 .gallery-image {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 50px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .gallery-image img {
-  height: 250px;
-  width: 350px;
+  height: 100%;
+  width: 100%;
   transform: scale(1.0);
   transition: transform 0.4s ease;
 }
@@ -29,8 +30,6 @@
 .img-box {
   box-sizing: content-box;
   margin: 10px;
-  height: 250px;
-  width: 350px;
   overflow: hidden;
   display: inline-block;
   color: white;

@@ -1,0 +1,41 @@
+
+  <div class="flex justify-center">
+    </div>
+    <div class="flex justify-center"> 
+        </div>
+        <div class="relative">
+        <img
+          src="https://www.dcb.com.au/wp-content/uploads/2025/02/home15_rockwindowcloseup.jpg"
+          class="w-full"
+          @zoomIn
+        />
+        <div>
+          <h1 class="absolute bottom-4 font-bold mb-2 text-[#1C1E1F]">{{id}}</h1>
+            <div class="w-7 md:w-16 h-[2px] bg-black mx-auto mt-6 mb-10"></div>
+            </div>
+      </div>
+      <div class="gallery-image">
+      @for (image of images; track image; let i = $index) {
+        <div
+          class="img-box"
+          (click)="openDialog(i)"
+          [@slideInUp]="image.visible ? 'in' : 'out'"
+          #imgBox
+          [attr.data-index]="i"
+        >
+          <img [src]="image.url" [alt]="image.caption" />
+          <div class="transparent-box"></div>
+        </div>
+      }
+    </div>
+
+
+  <!-- Dialog -->
+  <div class="dialog" *ngIf="isDialogOpen">
+    <div class="dialog-content">
+      <button class="close-btn" (click)="closeDialog()">×</button>
+      <img [src]="images[currentIndex].url" />
+      <button class="nav-btn left" (click)="prevImage()">&#10094;</button>
+      <button class="nav-btn right" (click)="nextImage()">&#10095;</button>
+    </div>
+  </div>
