@@ -73,7 +73,11 @@ export class Layout {
   }
 
   isHeroModule(){
-    return this.route.routeConfig?.path === 'Hero';
+    return this.route.routeConfig?.path == 'Hero';
+  }
+  isHero(){
+    const path = this.route.routeConfig?.path || '';
+  return path.includes('Hero') || path.includes('contact-us');
   }
 
   isProjectModule(){
