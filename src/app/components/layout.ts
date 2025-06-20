@@ -52,11 +52,7 @@ export class Layout {
     currentIndex = 0;
     private intervalId: any;
     showMobileMenu = false;
-
-    constructor(private route : ActivatedRoute, private router : Router){
-      console.log('activate route',  this.route.routeConfig?.path)
-    }
-
+    constructor(private route : ActivatedRoute, private router : Router){}
     ngOnInit() {
       this.intervalId = setInterval(() => {
         this.currentIndex = (this.currentIndex + 1) % this.imageList.length;
@@ -75,10 +71,11 @@ export class Layout {
   isHeroModule(){
     return this.route.routeConfig?.path == 'Hero';
   }
-  isHero(){
-    const path = this.route.routeConfig?.path || '';
-  return path.includes('Hero') || path.includes('contact-us');
-  }
+
+isHeroContactUs(): boolean {
+  const url = this.router.url;
+  return url.includes('Hero') || url.includes('contact-us') || url.includes('projects/particular');
+}
 
   isProjectModule(){
     return this.route.routeConfig?.path == 'projects';

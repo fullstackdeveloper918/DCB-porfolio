@@ -1,9 +1,6 @@
 
-  <div class="flex justify-center">
-    </div>
-    <div class="flex justify-center"> 
-        </div>
-        <div class="relative">
+<div class="absolute top-0 w-full">
+<div class="relative">
         <img
           src="https://www.dcb.com.au/wp-content/uploads/2025/02/home15_rockwindowcloseup.jpg"
           class="w-full"
@@ -24,7 +21,6 @@
           [attr.data-index]="i"
         >
           <img [src]="image.url" [alt]="image.caption" />
-          <div class="transparent-box"></div>
         </div>
       }
     </div>
@@ -39,3 +35,4 @@
       <button class="nav-btn right" (click)="nextImage()">&#10095;</button>
     </div>
   </div>
+</div>

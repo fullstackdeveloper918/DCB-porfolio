@@ -10,7 +10,7 @@
       #projectItem
       class="inline-block 2xl:min-w-[450px] min-w-[300px] max-w-[300px] 2xl:max-w-[470px] relative group overflow-hidden cursor-pointer"
       [@fadeInRight]="isVisible(i) ? 'in' : null"
-      [routerLink]="['/projects', project.title]"
+      [routerLink]="['/projects/particular', project.title]"
     >
       <img
         [src]="project.image"
