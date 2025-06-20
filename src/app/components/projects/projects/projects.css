@@ -58,6 +58,12 @@
 }
 }
 
+@media (max-width:1366px){
+  .productImage>div:nth-child(even) img{
+  height: 13rem;
+}
+}
+
 @media (max-width:767px){
   .productImage {
     flex-direction: column;
