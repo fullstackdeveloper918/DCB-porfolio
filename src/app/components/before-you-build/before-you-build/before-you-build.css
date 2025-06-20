@@ -2,3 +2,7 @@
     color: #000 !important;
     font-weight:600;
 }
+
+.reveal-line {
+  will-change: transform, opacity;
+}

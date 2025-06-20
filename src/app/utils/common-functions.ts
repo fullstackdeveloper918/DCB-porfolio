@@ -28,3 +28,16 @@ export const slideInUp = trigger('slideInUp', [
   state('in', style({ transform: 'translateY(0)', opacity: 1 })),
   transition('out => in', animate('900ms ease-out')),
 ]);
+
+export const mapScroll = trigger('mapScroll', [
+    transition(':enter', [
+      style({ opacity: 0 }),
+      animate('1s ease-out', style({ opacity: 1 })),
+    ]),
+  ]);
+
+export const heroFade = trigger('heroFade', [
+    transition(':leave', [
+      animate('0.5s ease-in', style({ opacity: 0 }))
+    ])
+  ]);

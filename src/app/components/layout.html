@@ -19,7 +19,8 @@
 <app-mobile-sidebar [isOpen]="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
 
   <!-- Navbar -->
-<div [ngClass]="isHeroContactUs() ? 'absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec' : 'z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-black max-w-full mx-auto '">
+@if(!isLoginModule()){
+  <div [ngClass]="isHeroContactUs() ? 'absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec' : 'z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-black max-w-full mx-auto '">
     <div class="loogmenu flex justify-start items-center gap-4  lg:gap-10 2xl:gap-15">
 
       <div (click)="goToHomePage()" class="font-bold tracking-widest w-full max-w-[100px] sm:max-w-[140px] lg:max-w-[180px] 2xl:max-w-[360px] relative  top-0 xs:top-2 lg:top-4 2xl:top-8 cursor-pointer">
@@ -87,8 +88,11 @@
       </span>
     </div>
 </div>
+}
 
    <router-outlet></router-outlet>
 </section>
+@if(!isLoginModule()){
 <app-footer *ngIf="!isProjectModule()"></app-footer>
+}
 

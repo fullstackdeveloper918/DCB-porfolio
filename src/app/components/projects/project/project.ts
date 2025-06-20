@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { particularProjectImages } from '../../../utils/Data';
@@ -6,7 +6,7 @@ import { slideInUp, zoomIn } from '../../../utils/common-functions';
 
 @Component({
   selector: 'app-project',
-  imports: [NgIf],
+  imports: [NgIf, NgClass],
   templateUrl: './project.html',
   styleUrl: './project.css',
   animations : [zoomIn, slideInUp]
@@ -48,6 +48,17 @@ export class Project {
       observer.observe(el.nativeElement);
     });
   }
+
+ getImageBoxClass(index: number): string {
+  // Pattern: [2, 1, 1, 2, 1, 1, ...] repeats every 3 images
+  const patternIndex = index % 6;
+
+  if (patternIndex === 1 || patternIndex === 2) {
+    return 'col-span-6'; // Full width
+  }
+
+  return 'col-span-1'; // Half width
+}
 
   openDialog(index: number) {
     this.currentIndex = index;

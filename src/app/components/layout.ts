@@ -83,4 +83,8 @@ isHeroContactUs(): boolean {
   goToHomePage(){
     this.router.navigate(['/Hero'])
   }
+
+isLoginModule():boolean{
+  return this.route.routeConfig?.path == 'client-login'
+}
 }

@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-before-you-build',
@@ -8,8 +13,8 @@ import { Router } from '@angular/router';
   templateUrl: './before-you-build.html',
   styleUrl: './before-you-build.css'
 })
-export class BeforeYouBuild implements OnInit{
-
+export class BeforeYouBuild implements OnInit, AfterViewInit{
+  @ViewChildren('textSection') textSections!: QueryList<ElementRef>;
   routeBasedContent: SafeHtml | null = null;
   routeBasedImage:string = ''
   routeBasedTitle!: string
@@ -60,6 +65,46 @@ export class BeforeYouBuild implements OnInit{
       this.routeBasedImage = 'https://www.dcb.com.au/wp-content/uploads/2020/09/Proj_3_bg.jpg'
     }
   }
+
+  ngAfterViewInit(): void {
+     this.textSections.forEach(section => {
+    const lines = section.nativeElement.querySelectorAll('.reveal-line');
+
+    lines.forEach((line: HTMLElement) => {
+   
+      const words = line.textContent?.trim().split(' ') || [];
+      line.innerHTML = ''; 
+
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.textContent = word + ' ';
+        wordSpan.innerHTML = word + '&nbsp;';
+        wordSpan.style.display = 'inline-block';
+        wordSpan.style.overflow = 'hidden';
+        line.appendChild(wordSpan);
+      });
+
+      const wordSpans = line.querySelectorAll('span');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: line,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        }
+      });
+
+      tl.from(wordSpans, {
+        y: 50,
+        opacity: 0.4,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.01,
+        height:0,
+      });
+    });
+  });
+}
 
     
 }
