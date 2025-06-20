@@ -117,7 +117,7 @@ export const ProjectsData = [
   ];
 
 export const particularProjectImages = [
-    { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_rockwindowcloseup.jpg', caption: 'Library', subcaption: 'Architect Design' },
+    // { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_rockwindowcloseup.jpg', caption: 'Library', subcaption: 'Architect Design' },
     { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_dogonstep.jpg', caption: 'Night Sky', subcaption: 'Cinematic' },
     { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_study1.jpg', caption: 'Tea Talk', subcaption: 'Composite' },
     { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_study2.jpg', caption: 'Road', subcaption: 'Landscape' },

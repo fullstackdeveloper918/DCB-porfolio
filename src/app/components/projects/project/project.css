@@ -16,8 +16,9 @@
 .gallery-image {
   display: grid;
   flex-wrap: wrap;
-  margin-top: 50px;
   grid-template-columns: repeat(2, 1fr);
+  margin: 10px;
+  gap: 10px;
 }
 
 .gallery-image img {

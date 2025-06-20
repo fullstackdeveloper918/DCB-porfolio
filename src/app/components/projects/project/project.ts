@@ -49,16 +49,16 @@ export class Project {
     });
   }
 
- getImageBoxClass(index: number): string {
-  // Pattern: [2, 1, 1, 2, 1, 1, ...] repeats every 3 images
+getImageBoxClass(index: number): string {
   const patternIndex = index % 6;
 
   if (patternIndex === 1 || patternIndex === 2) {
-    return 'col-span-6'; // Full width
+    return 'col-span-2'; // Full width in a 2-col grid
   }
 
   return 'col-span-1'; // Half width
 }
+
 
   openDialog(index: number) {
     this.currentIndex = index;

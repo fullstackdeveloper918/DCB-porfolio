@@ -7,16 +7,16 @@
     transition: .5s all;
 }
 .productImage {
-    height: calc(100vh - 15vw);
+    height: 100% !important;
     align-items: end;
 }
 
 .productImage>div img {
-    height: calc(100% - 100px);
+     height: 100%;
 }
 
 .productImage>div:nth-child(2n) {
-    height: fit-content !important;
+    height: 100%;
 }
 .scroll-smooth {
   scroll-behavior: smooth;
@@ -67,7 +67,7 @@
 @media (max-width:767px){
   .productImage {
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     align-items: center;
 }
