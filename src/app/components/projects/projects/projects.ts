@@ -1,8 +1,9 @@
 import { NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { fadeInRight } from '../../../utils/common-functions';
 import { ProjectsData } from '../../../utils/Data';
 import { RouterLink } from '@angular/router';
+import { ProjectService } from '../../../core/services/project';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './projects.css',
   animations : [fadeInRight]
 })
-export class Projects implements AfterViewInit, OnDestroy{
+export class Projects implements AfterViewInit, OnDestroy, OnInit{
  
   @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
@@ -21,6 +22,15 @@ export class Projects implements AfterViewInit, OnDestroy{
   observer!: IntersectionObserver;
 
   projects = ProjectsData
+
+  constructor(private projectService : ProjectService){}
+  ngOnInit(): void {
+    this.projectService.getProjects().subscribe((res:any) =>{
+      if(res.status == 200){
+       this.projects = res.projects
+      }
+    })
+  }
 
  ngAfterViewInit(): void {
   this.observer = new IntersectionObserver((entries) => {

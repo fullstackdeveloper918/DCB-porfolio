@@ -1,7 +1,7 @@
 <div class="team-container" #container>
   <div class="names">
     <div
-      *ngFor="let member of team; let i = index"
+      *ngFor="let member of teams; let i = index"
       class="name nameText"
       [class.active]="i === currentIndex"
       [attr.data-index]="i"
@@ -13,9 +13,9 @@
 
   <div class="image-container">
     <img
-      *ngIf="team[currentIndex]"
-      [src]="team[currentIndex].image"
-      [alt]="team[currentIndex].name"
+      *ngIf="teams[currentIndex]"
+      [src]="teams[currentIndex].image"
+      [alt]="teams[currentIndex].name"
     />
   </div>
 </div>

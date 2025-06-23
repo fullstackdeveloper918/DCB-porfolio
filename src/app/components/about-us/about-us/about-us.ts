@@ -1,9 +1,9 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { ScrollImage } from '../../scroll-image/scroll-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Team } from '../../../utils/Data';
+import { fadeInOutAnimation } from '../../../utils/common-functions';
+import { About } from '../../../core/services/about';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,26 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
   imports: [ScrollImage],
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
-   animations: [
-    trigger('fadeInOut', [
-      state(
-        'visible',
-        style({
-          opacity: 1,
-          zIndex: 1,
-        })
-      ),
-      state(
-        'hidden',
-        style({
-          opacity: 0,
-          zIndex: 0,
-        })
-      ),
-      transition('hidden => visible', [animate('1s ease-in')]),
-      transition('visible => hidden', [animate('1s ease-out')]),
-    ]),
-  ],
+  animations: [fadeInOutAnimation],
 })
 export class AboutUs {
 @ViewChildren('textSection') textSections!: QueryList<ElementRef>;
@@ -53,7 +34,7 @@ export class AboutUs {
     '/IMG_0004-min.jpg'
   ];
 
-  teams = Team
+  teams:any
 
   awardImages : string [] = [
     'https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png',
@@ -71,17 +52,38 @@ export class AboutUs {
 
   ]
   currentIndex = 0;
-  private intervalId: any;
   showMobileMenu = false;
+  heading!:string
+  heroImage!:string
+  heroHeading!:string
+  heroText!:string
+
+  constructor(private aboutService : About, private cdr : ChangeDetectorRef){}
 
   ngOnInit() {
-    this.intervalId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.imageList.length;
-    }, 5000); // 5 seconds per image
+    this.getAboutData();
   }
 
+  // GET ABOUT DATA
+ getAboutData() {
+  this.aboutService.getAboutData().subscribe((res: any) => {
+    console.log('res', res)
+    if (res.status === 200) {
+      this.heading = res.heading;
+      this.heroImage = res.heroData.imageLink;
+      this.heroHeading = res.heroData.heroHeading;
+      this.heroText = res.heroData.text
+      this.teams = res.staffs
+      setTimeout(() => {
+        this.cdr.detectChanges(); 
+        this.animateTextSections();
+      }, 100); 
+    }
+  });
+}
+
+
   ngOnDestroy() {
-    clearInterval(this.intervalId);
   }
 
   // TOOGLE MOBILE MENU
@@ -89,18 +91,56 @@ export class AboutUs {
   this.showMobileMenu = !this.showMobileMenu;
 }
 
-ngAfterViewInit() {
+// ngAfterViewInit() {
+//   this.textSections.forEach(section => {
+//     const lines = section.nativeElement.querySelectorAll('.reveal-line');
+
+//     lines.forEach((line: HTMLElement) => {
+   
+//       const words = line.textContent?.trim().split(' ') || [];
+//       line.innerHTML = ''; 
+
+//       words.forEach((word, index) => {
+//         const wordSpan = document.createElement('span');
+//         wordSpan.textContent = word + ' ';
+//         wordSpan.innerHTML = word + '&nbsp;';
+//         wordSpan.style.display = 'inline-block';
+//         wordSpan.style.overflow = 'hidden';
+//         line.appendChild(wordSpan);
+//       });
+
+//       const wordSpans = line.querySelectorAll('span');
+
+//       const tl = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: line,
+//           start: 'top 85%',
+//           toggleActions: 'play none none none',
+//         }
+//       });
+
+//       tl.from(wordSpans, {
+//         y: 50,
+//         opacity: 0.4,
+//         duration: 1,
+//         ease: 'power3.out',
+//         stagger: 0.01,
+//         height:0,
+//       });
+//     });
+//   });
+// }
+
+animateTextSections() {
   this.textSections.forEach(section => {
     const lines = section.nativeElement.querySelectorAll('.reveal-line');
 
     lines.forEach((line: HTMLElement) => {
-   
       const words = line.textContent?.trim().split(' ') || [];
-      line.innerHTML = ''; 
+      line.innerHTML = '';
 
-      words.forEach((word, index) => {
+      words.forEach(word => {
         const wordSpan = document.createElement('span');
-        wordSpan.textContent = word + ' ';
         wordSpan.innerHTML = word + '&nbsp;';
         wordSpan.style.display = 'inline-block';
         wordSpan.style.overflow = 'hidden';
@@ -123,11 +163,11 @@ ngAfterViewInit() {
         duration: 1,
         ease: 'power3.out',
         stagger: 0.01,
-        height:0,
       });
     });
   });
 }
+
 
 
 }

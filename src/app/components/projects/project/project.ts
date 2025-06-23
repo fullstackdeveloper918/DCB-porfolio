@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { particularProjectImages } from '../../../utils/Data';
 import { slideInUp, zoomIn } from '../../../utils/common-functions';
@@ -11,7 +11,7 @@ import { slideInUp, zoomIn } from '../../../utils/common-functions';
   styleUrl: './project.css',
   animations : [zoomIn, slideInUp]
 })
-export class Project {
+export class Project implements AfterViewInit {
  id: string | null = null;
 
   images = particularProjectImages.map(img => ({ ...img, visible: false }))
@@ -21,11 +21,13 @@ export class Project {
 
     @ViewChildren('imgBox', { read: ElementRef }) imgBoxes!: QueryList<ElementRef>;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+  private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
     });
   }
+
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(

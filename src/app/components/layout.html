@@ -6,7 +6,7 @@
     <img
       *ngFor="let img of imageList; let i = index"
       [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
-      [src]="img"
+      [src]="img.image"
       class="w-full h-full object-cover absolute top-0 left-0"
     />
   </div>

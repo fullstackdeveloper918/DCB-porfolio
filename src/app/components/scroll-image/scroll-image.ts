@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, AfterViewInit, QueryList, ViewChildren, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, QueryList, ViewChildren, ElementRef, ViewChild, Input } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Team } from '../../utils/Data';
@@ -12,10 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './scroll-image.css'
 })
 export class ScrollImage {
+  @Input() teams : any
   @ViewChild('container', { static: true }) containerRef!: ElementRef;
   currentIndex = 0;
-
-  team = Team
 
   ngAfterViewInit() {
     const names = this.containerRef.nativeElement.querySelectorAll('.name');

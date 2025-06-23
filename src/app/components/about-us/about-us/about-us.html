@@ -5,11 +5,7 @@
 
   <!-- Intro Paragraph -->
   <p class="text-sm max-w-[1300px] text-left mx-auto text-[#0f1113] mb-12">
-    David Campbell Building Pty Ltd (DCB) is a multi-award winning builder, specialising in the construction of
-    architecturally designed residential buildings, extensions, renovations and interiors. DCB was established in 1999
-    by owner and Director, David Campbell. David has always maintained a principled approach to business “trust and
-    tradition” and has invested in employing the best team of skilled tradesmen within DCB. We cover every aspect of the
-    building process, delivering a consistent and cohesive result.
+    {{heading}}
   </p>
 </section>
 <section class="px-4 text-center">
@@ -18,7 +14,7 @@
   <!-- Director Section -->
   <div class="max-w-[1300px] aboutsec items-center gap-4 mx-auto mt-16 mb-16">
     <!-- Image -->
-    <img src="https://www.dcb.com.au/wp-content/uploads/2022/02/david-campbell.jpg" alt="David Campbell"
+    <img [src]="heroImage" alt="David Campbell"
       class="w-full object-cover shadow-lg" />
 
     <!-- Text Info -->
@@ -29,8 +25,7 @@
 
   <div class="bottomcontent max-w-[1000px] ml-auto" #textSection>
   <h3 class="reveal-line text-[#0f1113] text-2xl font-bold md:text-4xl xl:text-5xl md:leading-[1] leading-6 md:pt-16 py-4 md:pb-12">
-    David Campbell heralds from entrepreneurial blood – his 3rd Great Grandfather, Robert Campbell, was Australia’s
-    original merchant in Campbell & Co.
+   {{heroHeading}}
   </h3>
 
   <p class="reveal-line text-[#0f1113] mb-4 md:text-[25px] max-w-[650px] ml-auto leading-[1.2]">
@@ -72,7 +67,7 @@
   <!-- Staff Childhood Photos -->
 <div class="hidden lg:block">
 
-  <app-scroll-image >
+  <app-scroll-image [teams]="teams" >
   </app-scroll-image>
   
 </div>

@@ -41,3 +41,22 @@ export const heroFade = trigger('heroFade', [
       animate('0.5s ease-in', style({ opacity: 0 }))
     ])
   ]);
+
+export const fadeInOutAnimation = trigger('fadeInOut', [
+  state(
+    'visible',
+    style({
+      opacity: 1,
+      zIndex: 1,
+    })
+  ),
+  state(
+    'hidden',
+    style({
+      opacity: 0,
+      zIndex: 0,
+    })
+  ),
+  transition('hidden => visible', [animate('1s ease-in')]),
+  transition('visible => hidden', [animate('1s ease-out')]),
+]);
