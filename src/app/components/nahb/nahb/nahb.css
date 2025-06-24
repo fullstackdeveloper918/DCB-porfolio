@@ -1,0 +1,63 @@
+
+
+/* nabhsec */
+.mainimgContent {
+    background: #e6e1dc;
+}
+
+.mainimgContent .webimage, .mainimgContent .belowContent {
+    opacity: 0;
+    transition: .5s all;
+}
+.mainimgContent:hover .webimage, .mainimgContent:hover .belowContent{
+        opacity: 1;
+}
+.mainimgContent .webimage{
+    position: relative;
+}
+.overlayDiv{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #0000007a, transparent);
+    content: "";
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s all;
+}
+.mainimgContent:hover .overlayDiv{
+    opacity: 1;
+}
+.mainimgContent:hover .logoImages{
+    opacity: 0;
+}
+.logoImages {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: grayscale(1);
+    opacity: .8;
+       transition: .5s all;
+}
+
+/* nabhsec end*/
+
+.productImage::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+.productImage::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+/* Handle */
+.productImage::-webkit-scrollbar-thumb {
+  background: #ffffff; 
+}
+
+/* Handle on hover */
+.productImage::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; 
+}

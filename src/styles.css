@@ -117,6 +117,7 @@ h1, h2, h3, h4, h5, a, li, span, p{
     color: #fff;
     stroke: #fff;
 }
+
 @media (max-width:1100px){
 .bottomContent::before {
     background: linear-gradient(rgb(7 7 7 / 1%), #000);

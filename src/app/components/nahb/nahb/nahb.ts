@@ -1,23 +1,65 @@
-import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ProjectsData } from '../../../utils/Data';
+import { fadeInRight } from '../../../utils/common-functions';
 
 @Component({
   selector: 'app-nahb',
-  imports: [],
+  imports: [NgIf, RouterLink, NgFor],
   templateUrl: './nahb.html',
-  styleUrl: './nahb.css'
+  styleUrl: './nahb.css',
+  animations : [fadeInRight]
 })
 export class Nahb {
  routeBasedContent: SafeHtml | null = null;
   routeBasedImage:string = ''
   routeBasedTitle!: string
+  projects = ProjectsData
+
+    @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  @ViewChild('sectionContainer') sectionContainer!: ElementRef;
+
+  visibleProjects = new Set<number>();
+observer!: IntersectionObserver;    
+  
 
   constructor(private router : Router, private sanitizer : DomSanitizer){}
 
   ngOnInit(): void {
   this.routeBasedContentAndImage();
   }
+
+  ngAfterViewInit(): void {
+  this.observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const index = this.projectElements.toArray().findIndex(
+        (el) => el.nativeElement === entry.target
+      );
+      if (entry.isIntersecting) {
+        this.visibleProjects.add(index);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  this.projectElements.forEach((el) => {
+    this.observer.observe(el.nativeElement);
+  });
+
+  // Scroll horizontally when wheel is triggered anywhere in section
+  this.sectionContainer.nativeElement.addEventListener('wheel', this.handleWheelEvent, { passive: false });
+}
+
+
+  handleWheelEvent = (event: WheelEvent) => {
+  if (event.deltaY !== 0) {
+    event.preventDefault();
+    const scrollSpeedMultiplier = 2;
+    this.scrollContainer.nativeElement.scrollLeft += event.deltaY * scrollSpeedMultiplier;
+    }
+  };
 
   routeBasedContentAndImage() {
   const currentRoute = this.router.url;
@@ -57,6 +99,9 @@ export class Nahb {
     this.routeBasedImage = 'https://www.dcb.com.au/wp-content/uploads/2020/05/nahb_img_1.jpg';
   }
 }
-
+   isVisible(index: number) {
+    return true;
+    // return this.visibleProjects.has(index);
+  }
 
 }
