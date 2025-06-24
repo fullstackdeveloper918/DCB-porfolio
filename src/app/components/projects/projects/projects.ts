@@ -2,7 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { fadeInRight } from '../../../utils/common-functions';
 import { ProjectsData } from '../../../utils/Data';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ProjectService } from '../../../core/services/project';
 
 @Component({
@@ -21,9 +21,9 @@ export class Projects implements AfterViewInit, OnDestroy, OnInit{
   visibleProjects = new Set<number>();
   observer!: IntersectionObserver;
 
-  projects = ProjectsData
+  projects:any
 
-  constructor(private projectService : ProjectService){}
+  constructor(private projectService : ProjectService, private router : Router){}
   ngOnInit(): void {
     this.projectService.getProjects().subscribe((res:any) =>{
       if(res.status == 200){
@@ -65,6 +65,17 @@ export class Projects implements AfterViewInit, OnDestroy, OnInit{
    isVisible(index: number): boolean {
     return this.visibleProjects.has(index);
   }
+
+  // GO TO PARTICLAR PROJECT
+goToParticularProject(id: number, projectTitle: string) {
+  this.router.navigate(
+    ['/projects/particular', id], // Route param: main identifier
+    {
+      queryParams: { title: projectTitle } // Optional display param
+    }
+  );
+}
+
 
   ngOnDestroy(): void {
   if (this.observer) {

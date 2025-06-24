@@ -10,7 +10,6 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      console.log('error', error)
       //  Handle specific status codes
       if (error.status === 401) {
         console.error('Unauthorized - Redirecting to login');

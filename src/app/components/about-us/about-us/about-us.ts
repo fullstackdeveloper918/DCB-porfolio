@@ -67,7 +67,6 @@ export class AboutUs {
   // GET ABOUT DATA
  getAboutData() {
   this.aboutService.getAboutData().subscribe((res: any) => {
-    console.log('res', res)
     if (res.status === 200) {
       this.heading = res.heading;
       this.heroImage = res.heroData.imageLink;

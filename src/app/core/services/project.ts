@@ -12,4 +12,9 @@ export class ProjectService {
   getProjects(){
     return this.apiService.get(apiRoutes.Projects)
   }
+
+  // GET PROJECT BY ID
+  getProjectById(id: string | null) {
+    return this.apiService.get(`${apiRoutes.Projects}/${id}`);
+  }
 }
