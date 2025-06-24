@@ -48,8 +48,17 @@ export class Projects implements AfterViewInit, OnDestroy, OnInit{
     this.observer.observe(el.nativeElement);
   });
 
-  // Scroll horizontally when wheel is triggered anywhere in section
-  this.sectionContainer.nativeElement.addEventListener('wheel', this.handleWheelEvent, { passive: false });
+if (!this.isMobileDevice()) {
+    this.sectionContainer.nativeElement.addEventListener(
+      'wheel',
+      this.handleWheelEvent,
+      { passive: false }
+    );
+  }
+}
+
+isMobileDevice(): boolean {
+  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
 

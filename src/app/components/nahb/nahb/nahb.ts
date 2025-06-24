@@ -18,7 +18,7 @@ export class Nahb {
   routeBasedTitle!: string
   projects = ProjectsData
 
-    @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
+  @ViewChildren('projectItem', { read: ElementRef }) projectElements!: QueryList<ElementRef>;
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
   @ViewChild('sectionContainer') sectionContainer!: ElementRef;
 
@@ -49,8 +49,19 @@ observer!: IntersectionObserver;
   });
 
   // Scroll horizontally when wheel is triggered anywhere in section
-  this.sectionContainer.nativeElement.addEventListener('wheel', this.handleWheelEvent, { passive: false });
+ if (!this.isMobileDevice()) {
+    this.sectionContainer.nativeElement.addEventListener(
+      'wheel',
+      this.handleWheelEvent,
+      { passive: false }
+    );
+  }
 }
+
+isMobileDevice(): boolean {
+  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 
 
   handleWheelEvent = (event: WheelEvent) => {
