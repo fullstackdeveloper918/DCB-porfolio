@@ -23,7 +23,7 @@ export class Nahb {
   @ViewChild('sectionContainer') sectionContainer!: ElementRef;
 
   visibleProjects = new Set<number>();
-observer!: IntersectionObserver;    
+  observer!: IntersectionObserver;    
   
 
   constructor(private router : Router, private sanitizer : DomSanitizer){}
