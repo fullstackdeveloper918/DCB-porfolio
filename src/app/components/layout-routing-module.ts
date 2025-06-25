@@ -34,6 +34,26 @@ const routes: Routes = [
     component : Layout,
     loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
   }, 
+   {
+    path : 'architects',
+    component : Layout,
+    loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
+  }, 
+  {
+    path : 'timing-to-consider',
+      component : Layout,
+      loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
+  },
+  {
+    path : 'expenses-to-consider',
+      component : Layout,
+      loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
+  },
+  {
+    path : 'housekeeping',
+    component : Layout,
+    loadChildren : () => import('../components/before-you-build/before-you-build-module').then((m)=> m.BeforeYouBuildModule)
+  },
   {
     path : '20-clubs',
     component : Layout,
@@ -46,7 +66,6 @@ const routes: Routes = [
   },
   {
     path : 'client-login',
-    component : Layout,
     loadChildren : () => import('../components/login/login-module').then((m) => m.LoginModule)
   },
   {

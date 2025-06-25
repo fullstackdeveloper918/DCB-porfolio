@@ -25,50 +25,53 @@
 
     <!-- Right Image -->
     <div class="w-full md:min-h-screen[370px] min-h-[280px] h-[280px] md:h-[370px] px-4 xl:px-10">
-      <img [src]='routeBasedImage' alt="Interior Preview" class="w-full h-full object-cover rounded" />
+      <img [src]='routeBasedDynamicContent.heroImage' alt="Interior Preview" class="w-full h-full object-cover rounded" />
     </div>
 
-    <div class="col-span-4 col-start-3 py-4 xl:py-12 text-sm 2xl:text-lg contentDiv px-4 xl:px-10">
-      <div class="grid grid-cols-12 grid-rows-1 md:gap-12 gap-6">
-        <div  class="col-span-12 md:col-span-6 xl:col-span-7">
-          <h5 class=" font-medium texxt-lg xl:text-2xl mb-4">{{routeBasedDynamicContent.sections[0].title}}</h5>
+  <div class="col-span-4 col-start-3 py-4 xl:py-12 text-sm 2xl:text-lg contentDiv px-4 xl:px-10">
+  <div class="grid grid-cols-12 grid-rows-1 md:gap-12 gap-6">
+    <!-- Left side: List block -->
+    <div class="col-span-12 md:col-span-6 xl:col-span-7" *ngIf="routeBasedDynamicContent.sections[0].type === 'text_with_list'">
+      <h5 class="font-medium texxt-lg xl:text-2xl mb-4">
+        {{ routeBasedDynamicContent.sections[0].title }}
+      </h5>
 
-          <ul class="list-disc pl-5 flex gap-2 flex-col">
-            <li class="  font-light xl:text-[16px] text-[13px]"><strong>DA, A Development Application </strong> is commonly referred to
-              as a DA. It is a formal request to carry out proposed development, such as change of use of land,
-              subdivide land, and carry out building, landscaping and other work.</li>
-            <li class=" font-light xl:text-[16px] text-[13px]"><strong> CDC, <a class="underline text-black cursor-pointer">Complying
-                  Development </a> </strong>Certificate is a fast-track approval process for straightforward
-              residential, commercial and industrial development.</li>
-            <li class=" font-light xl:text-[16px] text-[13px]"><strong>Architectural Drawings, </strong> Site Survey will be required to
-              obtain DA or CDC approval.</li>
-          </ul>
-        </div>
+      <ul class="list-disc pl-5 flex gap-2 flex-col">
+        <li
+          *ngFor="let item of routeBasedDynamicContent.sections[0].items"
+          class="font-light xl:text-[16px] text-[13px]"
+        >
+          <strong>{{ item.heading }}</strong> {{ item.description }}
+        </li>
+      </ul>
+    </div>
 
+    <!-- Right side: Text block -->
+    <div class="col-span-12 md:col-span-6 xl:col-span-5" *ngIf="routeBasedDynamicContent.sections[1].type === 'text_block'">
+      <h4 class="reveal-line font-semibold 2xl:text-4xl lg:text-3xl text-xl">
+        <a class="underline text-black cursor-pointer">{{ routeBasedDynamicContent.sections[1].title }}</a>
+      </h4>
 
-        <div class="col-span-12 md:col-span-6 xl:col-span-5">
-          <h4 class="reveal-line font-semibold 2xl:text-4xl lg:text-3xl text-xl">
-            <a class="underline text-black cursor-pointer">Home Owners Warranty Insurance</a> (HOW) is needed for any
-            residential project over the value of $20,000.00.
-          </h4>
+      <h4 class="reveal-line font-normal text-md text-black-50 pt-3 pb-6">
+        {{ routeBasedDynamicContent.sections[1].description }}
+      </h4>
 
-          <h4 class="reveal-line font-normal text-md text-black-50 pt-3 pb-6">
-            Bushfire reports will be needed if you are located in a bushfire zone.
-          </h4>
-          <div class="cursor-pointer bannerbtn">
-            <button
-              class=" flex gap-2 px-6 py-3 border border-black rounded-[50px] cursor-pointer bg-white hover:bg-black  transition-all hover:text-white text-black">Get
-              consultation <div class="b-button--arrow" bis_skin_checked="1">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                  class="relative bottom-[-4px]">
-                  <path d="M2.5 8L13.5 8" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
-                  <path d="M9 3.5L13.5 8L9 12.5" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </div></button>
+      <div class="cursor-pointer bannerbtn">
+        <button
+          class="flex gap-2 px-6 py-3 border border-black rounded-[50px] cursor-pointer bg-white hover:bg-black transition-all hover:text-white text-black">
+          Get consultation
+          <div class="b-button--arrow" bis_skin_checked="1">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg" class="relative bottom-[-4px]">
+              <path d="M2.5 8L13.5 8" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 3.5L13.5 8L9 12.5" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
           </div>
-        </div>
+        </button>
       </div>
-      <!-- <div [innerHTML]="routeBasedContent"></div> -->
     </div>
+  </div>
+</div>
+
   </div>
 </section>

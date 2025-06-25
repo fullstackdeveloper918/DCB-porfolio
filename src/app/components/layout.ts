@@ -66,7 +66,5 @@ export class Layout {
       this.router.navigate(['/Home'])
     }
 
-  isLoginModule():boolean{
-    return this.route.routeConfig?.path == 'client-login'
-  }
+
 }

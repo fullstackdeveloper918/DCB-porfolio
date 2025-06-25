@@ -60,3 +60,9 @@ export const fadeInOutAnimation = trigger('fadeInOut', [
   transition('hidden => visible', [animate('1s ease-in')]),
   transition('visible => hidden', [animate('1s ease-out')]),
 ]);
+
+export const fadeInMap =  trigger('fadeInMap', [
+  state('inactive', style({ opacity: 0 })),
+  state('active', style({ opacity: 1 })),
+  transition('inactive => active', animate('1000ms ease-in')),
+])

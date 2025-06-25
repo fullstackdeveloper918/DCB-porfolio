@@ -19,7 +19,6 @@
 <app-mobile-sidebar [isOpen]="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
 
   <!-- Navbar -->
-@if(!isLoginModule()){
   <div [ngClass]="isHeroContactUs() ? 'absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec' : 'z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-black max-w-full mx-auto '">
     <div class="loogmenu flex justify-start items-center gap-4  lg:gap-10 2xl:gap-15">
 
@@ -46,11 +45,11 @@
     >
       <div class="flex flex-col gap-3 w-1/2 text-black text-sm">
         <a href="/before-you-build" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Before Building</a>
-        <a routerLink="/architects" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Architects</a>
-        <a routerLink="/timing" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Timing to Consider</a>
-        <a routerLink="/expenses" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Expenses to Consider</a>
-        <a routerLink="/housekeeping" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Housekeeping</a>
-        <a routerLink="/alterations" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Alterations & Additions</a>
+        <a href="/architects" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Architects</a>
+        <a href="/timing-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Timing to Consider</a>
+        <a href="/expenses-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Expenses to Consider</a>
+        <a href="/housekeeping" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Housekeeping</a>
+        <a href="/alterations" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Alterations & Additions</a>
       </div>
       <div class="w-3/2 relative cursor-pointer ">
         <img
@@ -88,11 +87,9 @@
       </span>
     </div>
 </div>
-}
 
    <router-outlet></router-outlet>
 </section>
-@if(!isLoginModule()){
 <app-footer *ngIf="!isProjectModule()"></app-footer>
-}
+
 

@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-image-comparison-slider',
@@ -7,45 +7,63 @@ import { Component, ElementRef } from '@angular/core';
   styleUrl: './image-comparison-slider.css'
 })
 export class ImageComparisonSlider {
- constructor(private el: ElementRef) {}
 
-  ngAfterViewInit(): void {
-    const component = this.el.nativeElement.querySelector('[data-component="image-comparison-slider"]');
-    const sliderRange = component.querySelector('[data-image-comparison-range]');
-    const slider = component.querySelector('[data-image-comparison-slider]');
-    const overlay = component.querySelector('[data-image-comparison-overlay]');
-    const thumb = component.querySelector('[data-image-comparison-thumb]');
+ content = [
+    {
+      projectYear: 'Project Year -2023',
+      projectName: 'Silk and Stone',
+      projectBeforeImage: 'https://i.ibb.co/F8rDyhv/before.jpg',
+      projectAfterImage: 'https://i.ibb.co/0shfDNN/after.jpg',
+    },
+    {
+      projectYear: 'Project Year -2024',
+      projectName: 'Zen Ridge',
+      projectBeforeImage: 'https://i.ibb.co/F8rDyhv/before.jpg',
+      projectAfterImage: 'https://i.ibb.co/0shfDNN/after.jpg',
+    },
+  ];
 
-    function setSliderState(e: any) {
-      if (e.type === 'input') {
-        sliderRange.classList.add('image-comparison__range--active');
-        return;
-      }
-      sliderRange.classList.remove('image-comparison__range--active');
-      component.removeEventListener('mousemove', moveThumb);
-    }
+  @ViewChildren('overlays') overlays!: QueryList<ElementRef>;
+  @ViewChildren('sliders') sliders!: QueryList<ElementRef>;
 
-    function moveThumb(e: MouseEvent) {
-      let position = e.layerY - 20;
-      if (e.layerY <= sliderRange.offsetTop) position = -20;
-      if (e.layerY >= sliderRange.offsetHeight) position = sliderRange.offsetHeight - 20;
-      thumb.style.top = `${position}px`;
-    }
+  activeIndex: number | null = null;
 
-    function moveSlider(e: any) {
-      const value = e.target.value;
-      slider.style.left = `${value}%`;
-      overlay.style.width = `${value}%`;
-      component.addEventListener('mousemove', moveThumb);
-      setSliderState(e);
-    }
+  @HostListener('document:mouseup')
+  @HostListener('document:touchend')
+  onDragEnd() {
+    this.activeIndex = null;
+  }
 
-    if (!('ontouchstart' in window)) {
-      sliderRange.addEventListener('mouseup', setSliderState);
-      sliderRange.addEventListener('mousedown', moveThumb);
-    }
+  @HostListener('document:mousemove', ['$event'])
+  @HostListener('document:touchmove', ['$event'])
+  onDragMove(event: MouseEvent | TouchEvent) {
+    if (this.activeIndex === null) return;
 
-    sliderRange.addEventListener('input', moveSlider);
-    sliderRange.addEventListener('change', moveSlider);
+    const container = this.sliders.toArray()[this.activeIndex].nativeElement.parentElement;
+    const overlay = this.overlays.toArray()[this.activeIndex].nativeElement;
+    const slider = this.sliders.toArray()[this.activeIndex].nativeElement;
+
+    const containerRect = container.getBoundingClientRect();
+    const clientX =
+      event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
+
+    let percentage = ((clientX - containerRect.left) / containerRect.width) * 100;
+    percentage = Math.max(0, Math.min(100, percentage));
+
+    overlay.style.width = `${percentage}%`;
+    slider.style.left = `${percentage}%`;
+  }
+
+  startDrag(event: MouseEvent | TouchEvent, index: number) {
+    event.preventDefault();
+    this.activeIndex = index;
+  }
+
+  ngAfterViewInit() {
+    // Initialize positions to 50%
+    this.overlays.forEach((overlay:any, i:any) => {
+      overlay.nativeElement.style.width = '50%';
+      this.sliders.toArray()[i].nativeElement.style.left = '50%';
+    });
   }
 }
