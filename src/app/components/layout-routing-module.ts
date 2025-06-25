@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Layout } from './layout';
-import { AboutUs } from './about-us/about-us/about-us';
 import { NewHero } from './new-hero/new-hero/new-hero';
 
 const routes: Routes = [
   {
-    path : 'newHero',
+    path : 'newHome',
     component : NewHero
   },
   {
     path : '',
     // component : Layout,
-    redirectTo : 'Hero',
+    redirectTo : 'Home',
     pathMatch : 'full'
   },
     {
-    path : 'Hero',
+    path : 'Home',
     component : Layout,
     loadChildren: () => import('../components/hero/hero-module').then((m) => m.HeroModule)
   },
@@ -49,6 +48,20 @@ const routes: Routes = [
     path : 'client-login',
     component : Layout,
     loadChildren : () => import('../components/login/login-module').then((m) => m.LoginModule)
+  },
+  {
+    path : 'interior',
+    loadChildren : () => import('../components/interior/interior-module').then((m) => m.InteriorModule)
+  }, 
+  {
+    path : 'facts',
+    component : Layout,
+    loadChildren : () => import('../components/facts/facts-module').then((m) => m.FactsModule)
+  },
+  {
+    path : 'our-references',
+    component : Layout,
+    loadChildren : () => import('../components/our-references/our-references-module').then((m) => m.OurReferencesModule)
   }
 ];
 

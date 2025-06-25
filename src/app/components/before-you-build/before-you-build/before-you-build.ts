@@ -3,6 +3,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Dropdownpage } from '../../../core/services/dropdownpage';
+import { BeforeYouBuildContent } from '../../../core/interfaces/dropdown.interface';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,8 +20,11 @@ export class BeforeYouBuild implements OnInit, AfterViewInit{
   routeBasedContent: SafeHtml | null = null;
   routeBasedImage:string = ''
   routeBasedTitle!: string
-
-  constructor(private router : Router, private sanitizer : DomSanitizer){}
+  routeBasedDynamicContent!: BeforeYouBuildContent
+  constructor(
+  private router : Router, 
+  private sanitizer : DomSanitizer,
+  private dropDownPagesService : Dropdownpage){}
 
   ngOnInit(): void {
   this.routeBasedContentAndImage();
@@ -27,6 +32,7 @@ export class BeforeYouBuild implements OnInit, AfterViewInit{
 
   routeBasedContentAndImage(){
     const currentRoute = this.router.url;
+    this.getData(currentRoute);
     if(currentRoute === '/before-you-build'){
         const content = `
         <div class="text-sm text-gray-800 space-y-4 leading-relaxed">
@@ -65,6 +71,15 @@ export class BeforeYouBuild implements OnInit, AfterViewInit{
       this.routeBasedImage = 'https://www.dcb.com.au/wp-content/uploads/2020/09/Proj_3_bg.jpg'
     }
   }
+
+  getData(route: string) {
+  route = route.replace('/', '');
+   this.dropDownPagesService.getData(route).subscribe((data: BeforeYouBuildContent) => {
+    this.routeBasedDynamicContent = data;
+    console.log('this.routeBasedDynamicContent', this.routeBasedDynamicContent);
+   });
+  }
+
 
   ngAfterViewInit(): void {
      this.textSections.forEach(section => {

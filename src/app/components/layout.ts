@@ -51,19 +51,19 @@ export class Layout {
   }
 
   isHeroModule(){
-    return this.route.routeConfig?.path == 'Hero';
+    return this.route.routeConfig?.path == 'Home';
   }
 
   isHeroContactUs(): boolean {
     const url = this.router.url;
-    return url.includes('Hero') || url.includes('contact-us') || url.includes('projects/particular');
+    return url.includes('Home') || url.includes('contact-us') || url.includes('projects/particular');
   }
 
     isProjectModule(){
       return this.route.routeConfig?.path == 'projects';
     }
     goToHomePage(){
-      this.router.navigate(['/Hero'])
+      this.router.navigate(['/Home'])
     }
 
   isLoginModule():boolean{
