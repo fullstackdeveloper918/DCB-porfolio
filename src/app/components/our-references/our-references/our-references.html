@@ -27,7 +27,7 @@
   </div>
 
     <!-- Tabs -->
-  <div class="flex justify-center space-x-4 mb-10">
+  <div class="flex justify-center space-x-4 mb-10 mt-4">
     <button class="bg-black text-white px-6 py-2 rounded">RESIDENTIAL</button>
     <button class="bg-gray-300 text-black px-6 py-2 rounded">COMMERCIAL</button>
     <button class="bg-gray-300 text-black px-6 py-2 rounded">RESIDENTIAL - IN PROGRESS</button>
@@ -59,10 +59,35 @@
   <!-- Image Gallery -->
   <div class="overflow-x-auto">
     <div class="flex space-x-4 pb-2">
-      <img src="https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg" alt="Image 1" class="w-64 h-64 object-cover rounded shadow-md flex-shrink-0">
-      <img src="https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg" alt="Image 2" class="w-64 h-64 object-cover rounded shadow-md flex-shrink-0">
-      <img src="https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg" alt="Image 3" class="w-64 h-64 object-cover rounded shadow-md flex-shrink-0">
-      <!-- Add more <img> as needed -->
+      <button
+        (click)="scrollLeft()"
+        class="cursor-pointer"
+      >
+        &#8592;
+      </button>
+
+  <!-- Scrollable Image Row -->
+  <div
+    #slider
+    class="overflow-x-auto scroll-smooth flex space-x-4 pb-4 no-scrollbar"
+    style="scroll-behavior: smooth"
+  >
+   @for (image of imageList; track image) {
+      <img
+        [src]="image"
+        alt="Slider Image"
+        class="w-64 h-64 object-cover rounded shadow-md flex-shrink-0"
+      />
+   }
+  </div>
+
+  <!-- Right Arrow -->
+  <button
+    (click)="scrollRight()"
+    class="cursor-pointer"
+  >
+    &#8594;
+  </button>
     </div>
 
       <!-- Video Section -->

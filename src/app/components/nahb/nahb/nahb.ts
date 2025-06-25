@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { Router, RouterLink } from '@angular/router';
@@ -7,7 +7,7 @@ import { fadeInRight } from '../../../utils/common-functions';
 
 @Component({
   selector: 'app-nahb',
-  imports: [NgIf, RouterLink, NgFor],
+  imports: [NgIf, RouterLink, NgFor, NgStyle],
   templateUrl: './nahb.html',
   styleUrl: './nahb.css',
   animations : [fadeInRight]
