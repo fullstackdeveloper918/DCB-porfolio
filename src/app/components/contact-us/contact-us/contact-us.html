@@ -13,15 +13,15 @@
       <div class="space-y-6 bg-black md:p-8 p-4 text-white col-span-12 md:col-span-5 2xl:col-span-4 xl:pt-40 md:pt-34 pt-20">
         <div class="text-center md:text-left xl:pb-[10vw] md:pb-[5vw] pb-4">
             <div class="text-left mb-6">
-          <h1 class="text-md font-normal mb-2 text-white">Contact Us</h1>
+          <h1 class="text-md font-normal mb-2 text-white">{{data.title}}</h1>
           <div class="w-7 md:w-16 h-[1px] bg-[#fcfcfcbd] mr-auto mt-2"></div>
         </div>
-            <h2 class="font-semibold text-2xl md:text-4xl 2xl:text-[80px] text-left">Thank you for visiting</h2>
-          <p class="mt-2 text-[#fcfcfcbd] font-light text-xs 2xl:text-xl text-left">If you would like to find out more about us, email or call today for a personal appointment:</p>
+            <h2 class="font-semibold text-2xl md:text-4xl 2xl:text-[80px] text-left">{{data.subheading}}</h2>
+          <p class="mt-2 text-[#fcfcfcbd] font-light text-xs 2xl:text-xl text-left">{{data.description}}</p>
         </div>
 
         <div class="text-sm leading-relaxed ">
-          <h3 class="font-normal text-lg pb-4">DAVID CAMPBELL BUILDING PTY LTD</h3>
+          <h3 class="font-normal text-lg pb-4">{{data.company[0].name}}</h3>
           <p class="flex items-center mt-2 bg-[#272727] w-[fit-content] rounded cursor-pointer">
             <i class="fas fa-phone bg-[#363636] py-2 px-2 2xl:p-4 rounded "></i>
             <a href="tel:+61283993333" class="text-white hover:text-[#ddd] px-6 py-2 2xl:text-[16px] xs:text-xs text-[8px]">+61 2 8399 3333</a>
@@ -33,7 +33,7 @@
 
           <p class="flex items-center mt-2 bg-[#272727] w-[fit-content] rounded cursor-pointer ">
             <i class="fas fa-map-marker-alt bg-[#363636] py-2 px-2 2xl:p-4 rounded "></i>
-            <span class="text-white hover:text-[#ddd] px-3 py-2 2xl:text-[16px] xs:text-xs text-[8px]">11U, 175 Lower Gibbes Street, Chatswood NSW 2067 Australia</span>
+            <span class="text-white hover:text-[#ddd] px-3 py-2 2xl:text-[16px] xs:text-xs text-[8px]">{{data.company[0].address[0].line1}}, {{data.company[0].address[0].city}} {{data.company[0].address[0].state}} {{data.company[0].address[0].postal_code}} {{data.company[0].address[0].country}}</span>
           </p>
         </div>
       </div>

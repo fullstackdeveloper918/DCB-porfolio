@@ -13,7 +13,7 @@ imageList = [
   'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
   'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
   'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
-    'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+  'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
   'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
   'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
   'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',

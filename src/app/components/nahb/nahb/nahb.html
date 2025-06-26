@@ -3,22 +3,22 @@
      <div class="flex flex-col gap-4 lg:grid lg:grid-cols-2 justify-between lg:items-end items-center mb-6 text-center lg:text-left">  
     <div>
 
-      <h1 class=" text-3xl md:text-6xl xl:text-8xl font-bold mt-2 xl:mt-4  text-black uppercase">20 Clubs</h1>
+      <h1 class=" text-3xl md:text-6xl xl:text-8xl font-bold mt-2 xl:mt-4  text-black uppercase">{{data.heading}}</h1>
         <p class="xl:text-xl md:text-lg text-sm">
-    The National Association of Home Builders Craftsmen Builder 20 Clubs.</p>
+    {{data.subheading}}</p>
     </div>
 
   <div><p class="xl:text-xl md:text-lg text-sm">
-    David has been an active member of the prestigious NAHB since 2013. Within the NAHB is The Builder 20 Club, made up of some of the finest builders from around America. David is the only 20 Club member represented in Australia. The Builder 20 Club meet twice a year and discuss all matters of business in the building industry.  They critique, analyse and consult on all aspects of DCB’s building business.</p>
+    {{data.description}}</p>
   </div>
   </div>
   <div class="overflow-x-auto whitespace-nowrap flex gap-4 scroll-smooth px-1 productImage items-end"   #scrollContainer>
     <div
-      *ngFor="let project of projects; let i = index"
+      *ngFor="let project of data.projects; let i = index"
       #projectItem
       class="inline-block 2xl:min-w-[450px] min-w-[300px] max-w-[300px] 2xl:max-w-[470px] relative group overflow-hidden cursor-pointer bg-[f8f8f8] mainimgContent"
       [@fadeInRight]="isVisible(i) ? 'in' : null"
-      [routerLink]="['/projects/particular', project.title]"
+      (click)="openLink(project.link)"
     >
       <img
         [src]="project.image"

@@ -139,3 +139,99 @@ export const particularProjectImages = [
     { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_eastthroughwest.jpg', caption: 'Sea', subcaption: 'Cityscape' },
     { url: 'https://www.dcb.com.au/wp-content/uploads/2025/02/home15_eastthroughwest.jpg', caption: 'Vintage', subcaption: 'Cinematic' },
   ];
+
+
+export const pageData = {
+  "page_title": "A few truths about the building process",
+  "sections": [
+    {
+      "image": "https://www.dcb.com.au/wp-content/uploads/2020/05/Proj_7-1536x768.jpg",
+      "blocks": [
+        {
+          "heading": "Before you build",
+          "items": [
+            "Building work these days is not cheap...",
+            {
+              "text": "Home Building Compensation Fund (HBCF)",
+              "link": "#",
+              "description": "Required for any residential project over $20,000."
+            },
+            {
+              "text": "The majority of building works need council approval...",
+              "sub_items": [
+                {
+                  "text": "DA",
+                  "description": "A formal request..."
+                },
+                {
+                  "text": "CDC",
+                  "description": "A fast-track approval..."
+                }
+              ]
+            },
+            "Architectural Drawings and Site Survey will be required...",
+            "Bushfire reports may be needed if you're in a bushfire zone."
+          ]
+        },
+        {
+          "heading": "Architects",
+          "items": [
+            "Most professional architects are worth the investment...",
+            "Architects are neither builders nor estimators..."
+          ]
+        },
+        {
+          "heading": "Timing to consider",
+          "items": [
+            "Consult an engineer early — before final drawings."
+          ]
+        }
+      ]
+    },
+    {
+      "image": "https://www.dcb.com.au/wp-content/uploads/2020/05/facts_img3.jpg",
+      "blocks": [
+        {
+          "heading": "Council & Services",
+          "items": [
+            "Councils take a long time to approve works...",
+            {
+              "text": "Sydney Water",
+              "link": "#",
+              "description": "may delay approvals..."
+            },
+            {
+              "text": "Dial Before You Dig",
+              "link": "#",
+              "description": "certificate required."
+            }
+          ]
+        },
+        {
+          "heading": "Expenses to consider",
+          "items": [
+            "Long Service Leave Levy may apply.",
+            "Poor drawings = extra cost and time down the road."
+          ]
+        },
+        {
+          "heading": "Housekeeping",
+          "items": [
+            "Expect mess and noise during the work.",
+            "We help manage neighbour concerns."
+          ]
+        },
+        {
+          "heading": "Other Insights",
+          "items": [
+            "Materials vary and may have natural defects.",
+            "Rain and wind may affect timelines.",
+            "Extra work = extra cost unless pre-discussed.",
+            "Scheduling meetings helps keep things smooth.",
+            "We support you at all stages of your build."
+          ]
+        }
+      ]
+    }
+  ]
+}

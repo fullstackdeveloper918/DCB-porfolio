@@ -36,7 +36,7 @@ export class AboutUs {
 
   teams:any
 
-  awardImages : string [] = [
+  awardImages : any = [
     'https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png',
     'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-nationalwinner.png',
     'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-5m.png',
@@ -67,12 +67,14 @@ export class AboutUs {
   // GET ABOUT DATA
  getAboutData() {
   this.aboutService.getAboutData().subscribe((res: any) => {
+    console.log('About Data:', res);
     if (res.status === 200) {
       this.heading = res.heading;
       this.heroImage = res.heroData.imageLink;
       this.heroHeading = res.heroData.heroHeading;
       this.heroText = res.heroData.text
       this.teams = res.staffs
+      this.awardImages = res.awards
       setTimeout(() => {
         this.cdr.detectChanges(); 
         this.animateTextSections();
