@@ -21,6 +21,7 @@ export class Layout {
     currentIndex = 0;
     private intervalId: any;
     showMobileMenu = false;
+    imagesLoaded = false
     constructor(private route : ActivatedRoute, private router : Router, private homeService : Home){}
     ngOnInit() {
     this.getHomeData();
@@ -31,6 +32,7 @@ export class Layout {
     this.$ubscription = this.homeService.getHeroData().subscribe((res:HomeResponse) =>{
       if(res.status == 200){
       this.imageList = res.images
+          this.imagesLoaded = true;
       }
     })
     }

@@ -5,5 +5,7 @@ export const apiRoutes = {
     About : 'about-us',
     Projects : 'projects',
     contactForm : 'contact-form',
-    allFacts : 'all-facts'
+    allFacts : 'all-facts',
+    ourReference : 'our-reference',
+    secureForm : "secure-form"
 }

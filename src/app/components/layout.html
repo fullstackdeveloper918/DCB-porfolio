@@ -3,12 +3,21 @@
 >
   <!-- Background image transition -->
  @if(isHeroModule()){ <div style="position:absolute; inset:0; z-index:0">
-    <img
-      *ngFor="let img of imageList; let i = index"
-      [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
-      [src]="img.image"
+
+      <img
+      *ngIf="!imagesLoaded"
+      src="20181021-Fitzpatrick-Sugarloaf-Castlecrag__JG_5188-min.jpg"
       class="w-full h-full object-cover absolute top-0 left-0"
     />
+
+    <ng-container *ngIf="imagesLoaded">
+      <img
+        *ngFor="let img of imageList; let i = index"
+        [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
+        [src]="img.image"
+        class="w-full h-full object-cover absolute top-0 left-0"
+      />
+    </ng-container>
   </div>
 }
 

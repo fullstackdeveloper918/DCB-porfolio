@@ -235,3 +235,245 @@ export const pageData = {
     }
   ]
 }
+
+
+export const awardImages: any = [
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/09/nationalbusinessaward2024.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-nationalwinner.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-5m.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-2-4m.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-winner-1-6m.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-finalisst-2-6m.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2023-MBOY.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/nationalresidentialbuilding.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-housingaward-6m.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-housingaward-5m.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-BestUseofTimber.png' },
+  { imageLink: 'https://www.dcb.com.au/wp-content/uploads/2024/06/2019-MBOY-finalist.png' }
+];
+
+
+export const OurRefercneProjects :any  = [
+  {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+
+
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+   {
+    id: 'proj1',
+    address: '40 Chisolm Avenue, Avalon, Sydney, Australia',
+    architect: 'Rob Brown, Casey Brown Architecture',
+    contact: '+61293607977',
+    notes: 'Master bedroom, ensuite, walk-in robe, study and powder room additions',
+    images: [
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg',
+      'https://www.dcb.com.au/wp-content/uploads/2020/05/megamenu_facts.jpg'
+      // More image URLs...
+    ],
+    video: 'https://www.dcb.com.au/wp-content/uploads/2025/02/Babylon_HD.mp4'
+  },
+
+  // Add 13 more like the above
+];
+
+export const housreviwes = [
+  'https://www.dcb.com.au/wp-content/uploads/2020/09/badge_48_7.png',
+  'https://www.dcb.com.au/wp-content/uploads/2020/09/badge_49_7.png',
+  'https://www.dcb.com.au/wp-content/uploads/2020/09/badge_47_7.png',
+  'https://www.dcb.com.au/wp-content/uploads/2020/09/badge_44_7.png'
+
+]
