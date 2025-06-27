@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Dropdownpage } from '../../../core/services/dropdownpage';
@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-before-you-build',
-  imports: [NgFor,NgIf],
+  imports: [NgFor,NgIf, RouterLink],
   templateUrl: './before-you-build.html',
   styleUrl: './before-you-build.css'
 })
@@ -21,7 +21,6 @@ export class BeforeYouBuild implements OnInit, AfterViewInit{
   routeBasedDynamicContent!: BeforeYouBuildContent
   constructor(
   private router : Router, 
-  private sanitizer : DomSanitizer,
   private dropDownPagesService : Dropdownpage){}
 
   ngOnInit(): void {

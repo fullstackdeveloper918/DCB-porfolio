@@ -12,14 +12,14 @@ export class ImageComparisonSlider {
     {
       projectYear: 'Project Year -2023',
       projectName: 'Silk and Stone',
-      projectBeforeImage: 'https://i.ibb.co/F8rDyhv/before.jpg',
-      projectAfterImage: 'https://i.ibb.co/0shfDNN/after.jpg',
+      projectBeforeImage: 'before-after/after.png',
+      projectAfterImage: 'before-after/before.jpg',
     },
     {
       projectYear: 'Project Year -2024',
       projectName: 'Zen Ridge',
-      projectBeforeImage: 'https://i.ibb.co/F8rDyhv/before.jpg',
-      projectAfterImage: 'https://i.ibb.co/0shfDNN/after.jpg',
+      projectBeforeImage: 'before-after/after.png',
+      projectAfterImage: 'before-after/before.jpg',
     },
   ];
 

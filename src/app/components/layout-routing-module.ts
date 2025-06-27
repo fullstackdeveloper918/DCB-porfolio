@@ -65,10 +65,6 @@ const routes: Routes = [
     loadChildren : () => import('../components/contact-us/contact-us-module').then((m)=> m.ContactUsModule)
   },
   {
-    path : 'client-login',
-    loadChildren : () => import('../components/login/login-module').then((m) => m.LoginModule)
-  },
-  {
     path : 'interior',
     loadChildren : () => import('../components/interior/interior-module').then((m) => m.InteriorModule)
   }, 

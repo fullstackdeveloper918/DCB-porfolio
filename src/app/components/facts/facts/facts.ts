@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { pageData } from '../../../utils/Data';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { FactsService } from '../../../core/services/facts';
 
 @Component({
   selector: 'app-facts',
@@ -8,7 +9,20 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
   templateUrl: './facts.html',
   styleUrl: './facts.css'
 })
-export class Facts {
+export class Facts implements OnInit {
+
+  constructor(private factsService : FactsService){}
+
+  ngOnInit(): void {
+    this.getFactsData();
+    throw new Error('Method not implemented.');
+  }
+
+  getFactsData(){
+   this.factsService.getFactsData().subscribe((res:any)=>{
+    console.log('data', res)
+   })
+  }
 
   pageData : any = pageData
 

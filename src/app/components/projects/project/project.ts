@@ -20,6 +20,7 @@ export class Project implements OnInit {
 
   currentIndex = 0;
   isDialogOpen = false;
+  queryParams! : string | null
 
   @ViewChildren('imgBox', { read: ElementRef }) imgBoxes!: QueryList<ElementRef>;
 
@@ -29,6 +30,9 @@ export class Project implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
     });
+    this.route.queryParamMap.subscribe(queryParams =>{
+      this.queryParams = queryParams.get('title')
+    })
   }
 
   ngOnInit(): void {
