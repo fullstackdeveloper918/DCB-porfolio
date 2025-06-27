@@ -1,4 +1,4 @@
-<div class="bg-white text-black">
+<!-- <div class="bg-white text-black">
   <section class="px-4 py-12 lg:px-24">
     <h1 class="text-3xl lg:text-5xl font-semibold text-center mb-6">
       {{ pageData.page_title }}
@@ -7,7 +7,7 @@
 
     <ng-container *ngFor="let section of pageData.sections; let sectionIndex = index">
       <div class="flex flex-col lg:flex-row items-start gap-8 py-8" [ngClass]="{ 'bg-gray-50': sectionIndex % 2 === 1 }">
-        <!-- Text -->
+
         <div class="lg:w-2/3 space-y-6 text-sm lg:text-base">
           <div *ngFor="let block of section.blocks">
             <h2 class="text-xl font-semibold mb-2">{{ block.heading }}</h2>
@@ -36,7 +36,6 @@
           </div>
         </div>
 
-        <!-- Image -->
         <div class="lg:w-1/3">
           <img [src]="section.image" alt="Section Image" class="w-full h-auto object-cover rounded-lg shadow" />
         </div>
@@ -44,3 +43,335 @@
     </ng-container>
   </section>
 </div>
+
+ -->
+
+
+
+
+
+
+<!-- new sec -->
+<section class="mx-auto md:*:py-12 pt-0 mt-5" #textSection>
+  <!-- Heading -->
+  <div class="flex flex-wrap xl:grid xl:grid-cols-2 gap-4 md:gap-8 px-4 xl:px-10 justify-between pb-6 items-start pt-5">
+    <div class="text-left">
+      <h1 class="reveal-line text-3xl xl:text-5xl font-bold mb-2 text-black">
+        {{ pageData.page_title }}
+      </h1>
+
+      <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+        <h4 class="text-xl xl:text-2xl font-semibold"> Before you build</h4>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Building work these days is not cheap, so if you’re looking for cheap, we are probably not the right fit. Our
+          goal is to provide value to those who seek the same.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          <strong> <a href="https://www.icare.nsw.gov.au/builders-and-homeowners/homeowners/what-we-do"
+              class="font-bold underline"> Home Building Compensation Fund (HBCF)</a></strong>
+          is needed for any residential project over the value of $20,000.00.
+        </li>
+
+
+      </ul>
+      <div class="cursor-pointer bannerbtn">
+        <button
+          class="flex gap-2 px-6 py-3 border border-black rounded-[50px] cursor-pointer bg-white hover:bg-black  transition-all hover:text-white text-black mt-4">Get
+          consultation <div class="b-button--arrow" bis_skin_checked="1">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="relative bottom-[-4px]">
+              <path d="M2.5 8L13.5 8" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 3.5L13.5 8L9 12.5" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div></button>
+      </div>
+    </div>
+    <div class="cursor-pointer bannerbtn">
+      <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+
+        <li class="font-light xl:text-[16px] text-[13px]">
+
+          The majority of building works need council approval before work can commence, this can be done with: in
+          the way of a DA or a CDC.
+          <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+            <li class="font-light xl:text-[16px] text-[13px]">DA, A Development Application is a formal request for
+              consent to carry out proposed development, such as change of use of land, subdivision of land, and
+              carrying out building, landscaping, and other work.</li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              CDC, Complying Development Certificate is a fast-track approval process for straightforward
+              residential, commercial and industrial development. If the application meets specific criteria, it can
+              be determined by a council or accredited certifier.
+            </li>
+          </ul>
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Architectural Drawings and Site Survey will be required to obtain DA or CDC approval.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Bushfire reports will be needed if you are located in a bushfire zone.
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <!-- Main Content -->
+  <div class="mainBannercontent relative" style="padding: 0px !important;">
+
+
+
+    <!-- Right Image -->
+    <div class="w-full md:min-h-screen[370px] min-h-[280px] h-[280px] md:h-[370px] px-4 xl:px-10">
+      <img src="https://www.dcb.com.au/wp-content/uploads/2020/05/facts_img1-scaled.jpg" alt="Interior Preview"
+        class="w-full h-full object-cover rounded" />
+    </div>
+
+    <div class="col-span-4 col-start-3 py-4 xl:py-12 text-sm 2xl:text-lg contentDiv px-4 xl:px-10">
+      <div class="grid grid-cols-12 grid-rows-1 md:gap-12 gap-6">
+
+        <div class="col-span-12 md:col-span-6 xl:col-span-7">
+          <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+            <h4 class="text-xl xl:text-2xl font-semibold">Architects</h4>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              Most professional architects are worth the investment, they are very good at designing individual client
+              requirements, personalised scope of works, a schedule of finishes and detailed specifications. This is
+              what we as professional builders need to allow us to provide accurate pricing in advance which minimises
+              changes and surprises.
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              Architects are neither builders nor estimators. They can only give you a guide using historical prices for
+              their designs ONLY if the project is recent and very similar. Trust your professional builder to provide
+              accurate pricing with backup data and alternative selections if available.
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Right side: Text block -->
+        <div class="col-span-12 md:col-span-6 xl:col-span-5">
+
+
+          <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+            <h4 class="text-xl xl:text-2xl font-semibold">Timing to consider</h4>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              You will generally need to consult an Engineer, this should be done very early on in consultation with
+              your builder and architect, but do not do your final drawings until you have approval.
+            </li>
+
+          </ul>
+          <div class="cursor-pointer bannerbtn">
+            <button
+              class="flex gap-2 px-6 py-3 border border-black rounded-[50px] cursor-pointer bg-white hover:bg-black transition-all hover:text-white text-black mt-5">
+              Get consultation
+              <div class="b-button--arrow" bis_skin_checked="1">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="relative bottom-[-4px]">
+                  <path d="M2.5 8L13.5 8" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M9 3.5L13.5 8L9 12.5" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- second sec -->
+<section class="mx-auto md:*:py-12 pt-0 lg:mt-10" #textSection>
+  <!-- Heading -->
+  <!-- <div class="flex flex-wrap xl:grid xl:grid-cols-2 gap-4 md:gap-8 px-4 xl:px-10 justify-between pb-6 items-start pt-5">
+    <div class="text-left">
+      <h1 class="reveal-line text-3xl xl:text-5xl font-bold mb-2 text-black">
+        {{ pageData.page_title }}
+      </h1>
+
+      <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+        <h4 class="text-xl xl:text-2xl font-semibold"> Before you build</h4>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Building work these days is not cheap, so if you’re looking for cheap, we are probably not the right fit. Our
+          goal is to provide value to those who seek the same.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          <strong> <a href="https://www.icare.nsw.gov.au/builders-and-homeowners/homeowners/what-we-do" class="font-bold underline"> Home Building Compensation Fund  (HBCF)</a></strong>
+          is needed for any residential project over the value of $20,000.00.
+        </li>
+
+         
+      </ul>
+         <div class="cursor-pointer bannerbtn">
+            <button
+        class="flex gap-2 px-6 py-3 border border-black rounded-[50px] cursor-pointer bg-white hover:bg-black  transition-all hover:text-white text-black mt-4">Get
+        consultation <div class="b-button--arrow" bis_skin_checked="1">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="relative bottom-[-4px]">
+            <path d="M2.5 8L13.5 8" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9 3.5L13.5 8L9 12.5" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div></button>
+        </div>
+    </div>
+    <div class="cursor-pointer bannerbtn">
+      <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+
+         <li class="font-light xl:text-[16px] text-[13px]">
+
+              The majority of building works need council approval before work can commence, this can be done with: in
+              the way of a DA or a CDC.
+              <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+                <li class="font-light xl:text-[16px] text-[13px]">DA, A Development Application is a formal request for
+                  consent to carry out proposed development, such as change of use of land, subdivision of land, and
+                  carrying out building, landscaping, and other work.</li>
+                <li class="font-light xl:text-[16px] text-[13px]">
+                  CDC, Complying Development Certificate is a fast-track approval process for straightforward
+                  residential, commercial and industrial development. If the application meets specific criteria, it can
+                  be determined by a council or accredited certifier.
+                </li>
+              </ul>
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+Architectural Drawings and Site Survey will be required to obtain DA or CDC approval.
+            </li>
+                      <li class="font-light xl:text-[16px] text-[13px]">
+Bushfire reports will be needed if you are located in a bushfire zone.
+            </li>
+      </ul>
+
+    </div>
+  </div> -->
+  <!-- Main Content -->
+  <div class="mainBannercontent relative" style="padding: 0px !important;">
+
+
+
+    <!-- Right Image -->
+    <div class="w-full md:min-h-screen[370px] min-h-[280px] h-[280px] lg:h-[670px] px-4 xl:px-10">
+      <img src="https://www.dcb.com.au/wp-content/uploads/2020/05/facts_img3.jpg" alt="Interior Preview"
+        class="w-full h-full object-cover rounded" />
+    </div>
+
+    <div
+      class="col-span-4 col-start-3 py-4 xl:py-12 text-sm 2xl:text-lg contentDiv px-4 xl:px-10 lg:absolute right-15 top-5 bottom-5 bg-white lg:max-w-[600px] rounded h-[fit-content]">
+      <div class="flex flex-col md:gap-12 gap-6">
+
+        <div class="col-span-12 md:col-span-6 xl:col-span-7">
+          <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+
+            <li class="font-light xl:text-[16px] text-[13px]">
+              Councils take a long time to approve works
+              (this varies between councils) so plan accordingly and expect this.
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              <strong><a
+                  href="https://www.sydneywater.com.au/your-home/moving-renovating-building/building-renovating.html"
+                  class="font-bold underline"> Sydney Water </a></strong>
+              may hold up your approval as well if there are assets belonging to them near your proposed building works.
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">You will need to get a
+              <strong><a href="https://www.byda.com.au/" class="font-bold underline">Dial Before You Dig</a></strong>
+              certificate.
+            </li>
+            <h4 class="text-xl xl:text-2xl font-semibold">Expenses to consider</h4>
+            <li class="font-light xl:text-[16px] text-[13px]">You will need to pay a
+              <strong><a href="https://www.byda.com.au/" class="font-bold underline">Long Service Leave
+                  Levy</a></strong>
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              If you do not have good accurate drawings and documentation to build the project at the start of your
+              building process, it will cost you additional money and everyone more time after a project is underway.
+              This is why the investment in a good architect with detailed plans is so important. Remember the 7 “P’s”
+              of life?
+            </li>
+
+            <h4 class="text-xl xl:text-2xl font-semibold">Housekeeping</h4>
+            <li class="font-light xl:text-[16px] text-[13px]">When work starts, it will be messy, dusty and noisy so
+              please expect this as normal while we work, but it will be cleaned.
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              Neighbours may come out and express their concerns or complain. We manage this for you by providing them
+              with a copy of our “Pardon our Dust” letter with our job site supervisors contact information.
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              Your garden immediately around the affected area will not survive. If there is a special tree/plant that
+              needs extra love, we need to know before we start.
+            </li>
+            <li class="font-light xl:text-[16px] text-[13px]">
+              There are generally unforeseen problems or latent conditions with alterations and additions that would not
+              have been allowed for!
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="px-4 xl:px-10 mt-5 2xl:max-w-[60% xl:max-w-[50%] lg:max-w-full">
+
+
+      <ul class="list-disc pl-5 flex gap-2 flex-col py-0 px-0 mx-0 factContent">
+
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Most building products are made from natural resources and are susceptible to movements and minor defects.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Rain and wind do affect the project completion date so we will do our best to communicate any delays.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+
+          All the little extra bits of work you request to be done during the project, add up to a lot of money at the
+          end of the project. We need to be organised at our site meetings to be efficient and cost-effective for you.
+          It is our goal to minimise changes and minimise hidden costs.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Building work does take up a lot of your time, with meetings, site inspections and selection of Prime Cost
+          Items. We can agree on a meeting schedule convenient for you where you have the proper amount of time to help
+          the team.
+        </li>
+
+        <li class="font-light xl:text-[16px] text-[13px]">
+          Everyone on our team has responsibilities, deadlines and selection deadlines are the most key. If these are
+          delayed it will certainly delay the completion date in most cases and cost more.
+        </li>
+
+        <li class="font-light xl:text-[16px] text-[13px]">
+          If a product is cheap, it’s cheap for a reason! We have tried to accommodate clients with low budgets and it
+          never works so it makes no sense to allow it, it is a disservice to everyone.
+        </li>
+
+        <li class="font-light xl:text-[16px] text-[13px]">
+          If a product is cheap, it’s cheap for a reason! We have tried to accommodate clients with low budgets and it
+          never works so it makes no sense to allow it, it is a disservice to everyone.
+        </li>
+
+        <li class="font-light xl:text-[16px] text-[13px]">
+          For alterations and additions, you generally will need to move out for a period of time. It will greatly speed
+          up the process and save us all time and money.
+        </li>
+        <li class="font-light xl:text-[16px] text-[13px]">
+
+          DCB will always be available for you and make the building process a pleasurable experience so that you will
+          invite us to the party at the end! That will be the greatest compliment to us!
+        </li>
+      </ul>
+      <div class="cursor-pointer bannerbtn">
+        <button
+          class="flex gap-2 px-6 py-3 border border-black rounded-[50px] cursor-pointer bg-white hover:bg-black transition-all hover:text-white text-black mt-5">
+          Get consultation
+          <div class="b-button--arrow" bis_skin_checked="1">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="relative bottom-[-4px]">
+              <path d="M2.5 8L13.5 8" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 3.5L13.5 8L9 12.5" stroke="#302E2D" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
