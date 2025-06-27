@@ -24,7 +24,7 @@
 
 
   <div class="bottomcontent max-w-[1000px] ml-auto" #textSection>
-  <h3 class="reveal-line text-[#0f1113] text-2xl font-bold md:text-4xl xl:text-5xl md:leading-[1] leading-6 md:pt-16 py-4 md:pb-12">
+  <h3 class="reveal-line text-[#0f1113] text-2xl font-bold md:text-3xl xl:text-4xl md:leading-[1] leading-6 md:pt-14 py-4 md:pb-12 max-w-[800px]">
    {{heroHeading}}
   </h3>
 
@@ -89,7 +89,7 @@
   </div>
 
     <!-- Awards Section -->
-  <div class="md:flex flex-wrap justify-center items-center gap-0 grid grid-cols-3">
+  <div class="md:flex flex-wrap justify-center items-center gap-0 grid grid-cols-3 px-4 xl:px-10 gap-3">
     @for(image of awardImages;track image){
       <img [src]='image.imageLink' alt="Award 1"
       class="h-full md:h-35" />}

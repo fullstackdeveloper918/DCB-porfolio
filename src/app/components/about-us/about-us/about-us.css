@@ -4,15 +4,17 @@
     align-items: flex-start;
 } */
 .aboutsec{
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 30px;
     align-items: flex-start;
 }
 .aboutsec  img {
-    height: 1000px;
+    height: 400px;
     object-position: top;
     object-fit: cover;
     margin-top: -110px;
+    width: 100%;
+    max-width: 300px;
 }
 /* staf css */
 .caption {
@@ -84,10 +86,7 @@ h3.titlename {
 }
 }
 @media (max-width:991px){
-    .aboutsec{
-    display: grid;
-    grid-template-columns:1fr;
-}
+
     .aboutsec img{
     height: 350px;
 }
@@ -126,7 +125,11 @@ h3.titlename {
 }
 
 }
-
+@media (max-width:475px){
+        .aboutsec{
+flex-direction: column;
+}
+}
 .reveal-line {
   will-change: transform, opacity;
 }

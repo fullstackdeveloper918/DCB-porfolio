@@ -1,9 +1,9 @@
-<section class="px-4 2xl:py-20 md:py-10 py-6" #sectionContainer>
+<section class=" px-4 xl:px-10 2xl:py-20 md:py-10 py-6" #sectionContainer>
 
      <div class="flex flex-col gap-4 lg:grid lg:grid-cols-2 justify-between lg:items-end items-center mb-6 text-center lg:text-left">  
     <div>
 
-      <h1 class=" text-3xl md:text-6xl xl:text-8xl font-bold mt-2 xl:mt-4  text-black uppercase">{{data.heading}}</h1>
+      <h1 class=" text-3xl md:text-6xl 2xl:text-8xl font-bold mt-2 xl:mt-4  text-black uppercase">{{data.heading}}</h1>
         <p class="xl:text-xl md:text-lg text-sm">
     {{data.subheading}}</p>
     </div>
@@ -16,14 +16,14 @@
     <div
       *ngFor="let project of data.projects; let i = index"
       #projectItem
-      class="inline-block 2xl:min-w-[450px] min-w-[300px] max-w-[300px] 2xl:max-w-[470px] relative group overflow-hidden cursor-pointer bg-[f8f8f8] mainimgContent"
+      class="inline-block 2xl:min-w-[450px] 2xl:min-h-[450px] min-h-[300px] min-w-[300px] max-w-[300px] 2xl:max-w-[470px] relative group overflow-hidden cursor-pointer bg-[f8f8f8] mainimgContent"
       [@fadeInRight]="isVisible(i) ? 'in' : null"
       (click)="openLink(project.link)"
     >
       <img
         [src]="project.image"
         [alt]="project.title"
-        class="w-full object-cover transition-transform duration-500 group-hover:scale-105 webimage"
+        class="w-full object-cover transition-transform duration-500 group-hover:scale-105 webimage 2xl:min-h-[450px] min-h-[300px]"
       />
       <div class="overlayDiv"></div>
       <div class="absolute logoImages">
@@ -34,7 +34,7 @@
         class="uppercase group-hover:opacity-100 transition duration-300 flex items-end justify-start text-black px-0 py-6 absolute bottom-0 left-5 belowContent"
       >
         <div>
-          <h2 class="text-lg md:text-md xl:text-xl text-white font-semibold max-w-[350px] whitespace-pre-line
+          <h2 class="text-lg md:text-[16px] 2xl:text-xl leading-[1.4rem] text-white font-semibold max-w-[350px] whitespace-pre-line
 ">Shaeffer Hyde Construction – Colorado </h2>
           <!-- <p class="mt-1 text-sm">See Project ⟶</p> -->
         </div>
