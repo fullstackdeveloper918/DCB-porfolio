@@ -5,12 +5,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { fadeInOutAnimation } from '../../../utils/common-functions';
 import { About } from '../../../core/services/about';
 import { awardImages } from '../../../utils/Data';
+import { Awards } from "../awards/awards";
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-about-us',
-  imports: [ScrollImage],
+  imports: [ScrollImage, Awards],
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
   animations: [fadeInOutAnimation],
