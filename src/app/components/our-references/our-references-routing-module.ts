@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OurReferences } from './our-references/our-references';
 import { SecretKey } from './secret-key/secret-key';
+import { OurReference1 } from './our-reference-1/our-reference-1';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path : 'secret-key',
     component : SecretKey
+  }, 
+  {
+    path : '2', 
+    component : OurReference1
   }
 ];
 

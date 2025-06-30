@@ -1,0 +1,194 @@
+
+<section class="bg-white text-black px-4 py-16 lg:px-32 text-center">
+  <!-- Title -->
+  <h1 class="text-3xl lg:text-5xl font-bold mb-6">{{data?.heading}}</h1>
+
+  <!-- Intro Paragraph -->
+  <p class="mb-4 text-base lg:text-lg">
+    {{data.subheadings}}
+  </p>
+
+  <p class="text-base lg:text-lg mb-12">
+    Below are some client and industry references, which have been shared for your further consideration.
+    We request that you respect our client and industry networks’ privacy, and do not share this link or
+    these contact details with other persons or organisations. We look forward to joining your team!
+  </p>
+
+  <!-- Video Section -->
+  <div class="overflow-hidden rounded-xl shadow-lg">
+    <video
+      src="https://www.dcb.com.au/wp-content/uploads/2024/08/DCB-REFERENCE-VIDEO-V1-1.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="w-full h-auto object-contain"
+    ></video>
+  </div>
+
+    <!-- Tabs -->
+<div class="flex space-x-4 mb-10 mt-4">
+  <button 
+    class="px-6 py-2 rounded"
+    [ngClass]="{
+      'bg-black text-white': selectedCategory === 'RESIDENTIAL',
+      'bg-gray-300 text-black': selectedCategory !== 'RESIDENTIAL'
+    }"
+    (click)="selectedCategory = 'RESIDENTIAL'"
+  >
+    RESIDENTIAL
+  </button>
+
+  <button 
+    class="px-6 py-2 rounded"
+    [ngClass]="{
+      'bg-black text-white': selectedCategory === 'COMMERCIAL',
+      'bg-gray-300 text-black': selectedCategory !== 'COMMERCIAL'
+    }"
+    (click)="selectedCategory = 'COMMERCIAL'"
+  >
+    COMMERCIAL
+  </button>
+
+  <button 
+    class="px-6 py-2 rounded text-center"
+    [ngClass]="{
+      'bg-black text-white': selectedCategory === 'RESIDENTIAL - IN PROGRESS',
+      'bg-gray-300 text-black': selectedCategory !== 'RESIDENTIAL - IN PROGRESS'
+    }"
+    (click)="selectedCategory = 'RESIDENTIAL - IN PROGRESS'"
+  >
+    RESIDENTIAL - IN PROGRESS
+  </button>
+</div>
+
+
+  <!-- Section Heading -->
+  <h2 class="text-2xl lg:text-3xl text-left font-semibold mb-6">Residential</h2>
+
+<!-- Project List Wrapper -->
+<div *ngFor="let project of projects" class="mb-16">
+  <!-- Project Details -->
+  <div class="mb-8 space-y-2">
+    <p class="text-xl text-left font-bold">{{ project.address }}</p>
+
+    <p class="flex items-start gap-2">
+      <i class="fas fa-user-tie mt-1"></i>
+      <span><strong>Architect:</strong> {{ project.architect }}</span>
+    </p>
+
+    <p class="flex items-start gap-2">
+      <i class="fas fa-phone mt-1"></i>
+      <a [href]="'tel:' + project.contact" class="text-blue-600 underline">
+        Contact: {{ project.contact }}
+      </a>
+    </p>
+
+    <p class="flex items-start gap-2">
+      <i class="fas fa-clipboard-list mt-1"></i>
+      <span><strong>Notes:</strong> {{ project.notes }}</span>
+    </p>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="overflow-x-auto">
+    <div class="flex space-x-4 pb-2 items-center relative">
+      <button (click)="scrollLeft()" class="cursor-pointer">&#8592;</button>
+
+      <div
+      #slider
+      class="flex overflow-x-auto space-x-4 pb-4 no-scrollbar"
+      [id]="'slider-' + project.id"
+      style="scroll-behavior: smooth"
+    >
+      <div *ngFor="let image of project.images" class="flex-shrink-0 w-[33.33%]">
+        <img
+          [src]="image"
+          alt="Slider Image"
+          class="h-64 w-full object-cover rounded shadow-md"
+        />
+      </div>
+    </div>
+    
+
+      <button (click)="scrollRight()" class="cursor-pointer">&#8594;</button>
+    </div>
+
+    <!-- Video Section -->
+    <video
+      *ngIf="project.video"
+      [src]="project.video"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="w-full h-auto object-contain mt-4"
+    ></video>
+  </div>
+</div>
+
+
+
+
+<!-- References Section -->
+<h2 class="text-3xl font-bold text-center my-6">References</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12">
+  @for (ref of referencesData; track ref.email) {
+    <div class="space-y-2">
+      <p class="flex items-center gap-2"><i class="fa fa-user"></i> <strong>Name :</strong> {{ ref.name }}</p>
+      <p class="flex items-center gap-2"><i class="fa fa-phone"></i> <strong>Phone :</strong> {{ ref.phone }}</p>
+      <p class="flex items-center gap-2"><i class="fa fa-envelope"></i> <strong>Email :</strong> <a href="mailto:{{ref.email}}" class="text-blue-600 underline">{{ ref.email }}</a></p>
+      <p class="flex items-center gap-2"><i class="fa fa-sticky-note"></i> <strong>Notes :</strong> {{ ref.notes }}</p>
+    </div>
+  }
+</div>
+
+<!-- Videos Section -->
+<h2 class="text-3xl font-bold text-center my-10">Videos</h2>
+<p class="text-center text-lg mb-6">Here are some media features for DCB residential projects</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6 md:px-12">
+  @for (video of videosData; track video.title) {
+    <div class="space-y-2 text-center">
+      <div class="relative">
+        <a [href]="video.link">
+          <img [src]="video.thumbnail" alt="{{ video.title }}" class="rounded shadow-lg" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <i class="fa fa-play-circle text-white text-5xl opacity-80"></i>
+          </div>
+        </a>
+      </div>
+      <p class="font-medium">{{ video.title }}</p>
+    </div>
+  }
+</div>
+
+
+    <h2 class="text-2xl md:text-3xl font-semibold mb-8">Recent Awards</h2>
+  <!-- Award Logos Row -->
+
+  <app-awards></app-awards>
+
+
+  <!-- Reference Quote + CTA -->
+  <div class="mb-16">
+    <p class="text-lg md:text-xl mb-4">
+      {{data.reference.quote}}
+    </p>
+    <a [href]="data.reference.buttonLink" target="_blank" class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">READ MORE</a>
+  </div>
+
+  <!-- Houzz Reviews -->
+  <div class="bg-gray-100 py-12 px-4">
+    <h3 class="text-xl md:text-2xl font-semibold mb-6">Check Our Houzz Reviews</h3>
+
+    <!-- Houzz Badges -->
+  <div class="flex flex-wrap justify-center items-center gap-4 mb-6">
+  @for (houseImage of houseimages; track houseImage) {
+      <img [src]="houseImage" alt="Houzz 2020" class="h-12 object-contain" />
+  }
+    </div>
+
+    <a [href]="data.houzzReviews.buttonLink"   target="_blank" 
+ class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">OUR HOUZZ REVIEWS</a>
+  </div>
+</section>
