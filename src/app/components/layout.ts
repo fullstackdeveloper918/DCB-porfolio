@@ -58,7 +58,7 @@ export class Layout {
 
   isHeroContactUs(): boolean {
     const url = this.router.url;
-    return url.includes('Home') || url.includes('contact-us') || url.includes('projects/particular') || url.includes('our-references');
+    return url.includes('Home') || url.includes('contact-us') || url.includes('projects/particular') || url.includes('our-references/2');
   }
 
     isProjectModule(){

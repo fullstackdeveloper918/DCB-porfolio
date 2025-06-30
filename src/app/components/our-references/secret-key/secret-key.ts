@@ -30,8 +30,9 @@ export class SecretKey {
     if(this.passwordForm.valid){
       this.referenceService.secureForm(this.passwordForm.value.password).subscribe(
         (res: any) => {
-          console.log('res', res)
           if(res.status){
+          const expiry = new Date().getTime() + 60 * 60 * 1000;
+          localStorage.setItem('secureSession', JSON.stringify({ expires: expiry }));
           this.router.navigate(['/our-references/1'])
           }
         },

@@ -8,5 +8,6 @@ export const apiRoutes = {
     allFacts : 'all-facts',
     ourReference : 'our-reference',
     secureForm : "secure-form",
-    beforeAfter : "before-after"
+    beforeAfter : "before-after",
+    residential : "residential"
 }

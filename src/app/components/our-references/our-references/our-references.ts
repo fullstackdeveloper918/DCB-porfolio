@@ -19,13 +19,15 @@ referencesData = referencesData;
 videosData = videosData;
 
 houseimages:any = housreviwes
-projects :any = OurRefercneProjects
+projects :any 
+= OurRefercneProjects
 constructor(private referenceService : OurReference){}
 
 
 
 ngOnInit() {
   this.getReferenceData();
+  this.getRefrerenceProjects();
 }
 
 
@@ -37,6 +39,13 @@ getReferenceData(){
       console.log('this.data', this.data)
     }
   });
+}
+
+getRefrerenceProjects(){
+  this.referenceService.getReferenceProjects().subscribe(res =>{
+    // this.projects = res
+    console.log('res', res)
+  })
 }
 
 

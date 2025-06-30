@@ -17,4 +17,9 @@ export class OurReference {
   secureForm(password:any){
     return this.apiService.get(`${apiRoutes.secureForm}?access_key=${password}`)
   }
+
+   // get referece projects
+   getReferenceProjects(){
+    return this.apiService.get(apiRoutes.residential)
+   }
 }

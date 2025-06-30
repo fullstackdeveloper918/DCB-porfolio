@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { OurReferences } from './our-references/our-references';
 import { SecretKey } from './secret-key/secret-key';
 import { OurReference1 } from './our-reference-1/our-reference-1';
+import { AuthGuard } from '../../core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: '1',
-    component : OurReferences
+    component : OurReferences,
+    canActivate : [AuthGuard]
   },
   {
     path : 'secret-key',
