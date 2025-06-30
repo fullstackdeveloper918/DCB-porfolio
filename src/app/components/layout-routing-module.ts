@@ -5,15 +5,15 @@ import { NewHero } from './new-hero/new-hero/new-hero';
 
 const routes: Routes = [
   {
-    path : 'newHome',
+    path : '',
     component : NewHero
   },
-  {
-    path : '',
-    // component : Layout,
-    redirectTo : 'Home',
-    pathMatch : 'full'
-  },
+  // {
+  //   path : '',
+  //   // component : Layout,
+  //   redirectTo : 'Home',
+  //   pathMatch : 'full'
+  // },
     {
     path : 'Home',
     component : Layout,
