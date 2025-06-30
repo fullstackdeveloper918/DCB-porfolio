@@ -6,7 +6,7 @@
       <!-- BEFORE overlay -->
       <div class="image-comparison__image-wrapper image-comparison__image-wrapper--overlay" #overlays>
         <figure class="image-comparison__figure image-comparison__figure--overlay">
-          <img [src]="item.projectBeforeImage" alt="Before" class="image-comparison__image" />
+          <img [src]="item.before_img" alt="Before" class="image-comparison__image" />
         </figure>
       </div>
 
@@ -23,15 +23,15 @@
       <!-- AFTER image -->
       <div class="image-comparison__image-wrapper">
         <figure class="image-comparison__figure">
-          <img [src]="item.projectAfterImage" alt="After" class="image-comparison__image" />
+          <img [src]="item.after_img" alt="After" class="image-comparison__image" />
         </figure>
       </div>
 
       <!-- Bottom Content -->
       <div class="contentBottom absolute bottom-[-30px] md:bottom-[-80px] left-0 right-0 z-20 text-center mx-auto bottomContent px-5 md:pb-15">
-        <p class="mt-2 text-xs md:text-[15px] tracking-wide textShadow text-[#828282]">{{ item.projectYear }}</p>
+        <p class="mt-2 text-xs md:text-[15px] tracking-wide textShadow text-[#828282]">{{ item.year }}</p>
         <h2 class="text-2xl leading-[30px] lg:text-[40px] lg:leading-[38px] 2xl:text-[70px] 2xl:leading-[62px] textShadow font-medium text-white md:mt-2">
-          {{ item.projectName }}
+          {{ item.name }}
         </h2>
       </div>
     </div>

@@ -1,4 +1,6 @@
-import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Home } from '../../core/services/home';
+import { Project, ProjectResponse } from '../../core/interfaces/home.interface';
 
 @Component({
   selector: 'app-image-comparison-slider',
@@ -6,27 +8,26 @@ import { Component, ElementRef, HostListener, QueryList, ViewChildren } from '@a
   templateUrl: './image-comparison-slider.html',
   styleUrl: './image-comparison-slider.css'
 })
-export class ImageComparisonSlider {
-
- content = [
-    {
-      projectYear: 'Project Year -2023',
-      projectName: 'Silk and Stone',
-      projectBeforeImage: 'before-after/after.png',
-      projectAfterImage: 'before-after/before.jpg',
-    },
-    {
-      projectYear: 'Project Year -2024',
-      projectName: 'Zen Ridge',
-      projectBeforeImage: 'before-after/after.png',
-      projectAfterImage: 'before-after/before.jpg',
-    },
-  ];
+export class ImageComparisonSlider implements OnInit, AfterViewInit {
 
   @ViewChildren('overlays') overlays!: QueryList<ElementRef>;
   @ViewChildren('sliders') sliders!: QueryList<ElementRef>;
 
   activeIndex: number | null = null;
+  content!: Project[];
+  constructor(private homeService : Home){}
+
+  ngOnInit(): void {
+    this.getBeforeAfterContent()
+  }
+
+  getBeforeAfterContent(){
+    this.homeService.getBeforeAfterContent().subscribe((res:ProjectResponse) =>{
+      this.content = res.projects
+      console.log('before after', res)
+    })
+  }
+
 
   @HostListener('document:mouseup')
   @HostListener('document:touchend')

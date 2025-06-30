@@ -7,5 +7,6 @@ export const apiRoutes = {
     contactForm : 'contact-form',
     allFacts : 'all-facts',
     ourReference : 'our-reference',
-    secureForm : "secure-form"
+    secureForm : "secure-form",
+    beforeAfter : "before-after"
 }
