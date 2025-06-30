@@ -4,10 +4,11 @@ import { referencesData, videosData, housreviwes, OurRefercneProjects } from '..
 import { Awards } from '../../about-us/awards/awards';
 import { NgFor, NgIf, NgClass } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-our-reference-1',
-  imports: [ReactiveFormsModule, NgFor, NgIf, NgClass, Awards],
+  imports: [ReactiveFormsModule, NgFor, NgIf, NgClass, Awards, RouterLink],
   templateUrl: './our-reference-1.html',
   styleUrl: './our-reference-1.css'
 })
