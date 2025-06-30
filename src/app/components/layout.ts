@@ -65,7 +65,7 @@ export class Layout {
       return this.route.routeConfig?.path == 'projects';
     }
     goToHomePage(){
-      this.router.navigate(['/Home'])
+      this.router.navigate(['/'])
     }
 
 
