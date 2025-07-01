@@ -10,7 +10,7 @@
     <div>
 
       <h1 class=" text-3xl md:text-6xl 2xl:text-8xl font-bold mt-2 xl:mt-4  text-black uppercase">{{data.heading}}</h1>
-        <p class="xl:text-xl md:text-lg text-sm">
+        <p class="xl:text-xl md:text-lg text-s  m">
     {{data.subheading}}</p>
     </div>
 
@@ -33,7 +33,7 @@
       />
       <div class="overlayDiv"></div>
       <div class="absolute logoImages">
-        <img src="https://shaefferhyde.com/wp-content/uploads/2022/09/header-logo.svg" alt="logoImage"/>
+        <img [src]="project.logo" alt="logoImage"/>
       </div>
       <div
         *ngIf="project.title"
@@ -41,7 +41,7 @@
       >
         <div>
           <h2 class="text-lg md:text-[16px] 2xl:text-xl leading-[1.4rem] text-white font-semibold max-w-[350px] whitespace-pre-line
-">Shaeffer Hyde Construction – Colorado </h2>
+">{{project.title}}</h2>
           <!-- <p class="mt-1 text-sm">See Project ⟶</p> -->
         </div>
       </div>

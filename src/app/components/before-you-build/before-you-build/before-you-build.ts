@@ -36,7 +36,6 @@ export class BeforeYouBuild implements OnInit, AfterViewInit{
   route = route.replace('/', '');
    this.dropDownPagesService.getData(route).subscribe((data: BeforeYouBuildContent) => {
     this.routeBasedDynamicContent = data;
-    console.log('this.routeBasedDynamicContent', this.routeBasedDynamicContent);
    });
   }
 
