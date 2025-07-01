@@ -9,14 +9,14 @@ const routes: Routes = [
     path : 'newHero',
     component : NewHero
   },
-  {
-    path : '',
-    // component : Layout,
-    redirectTo : 'Hero',
-    pathMatch : 'full'
-  },
+  // {
+  //   path : '',
+  //   // component : Layout,
+  //   redirectTo : 'Hero',
+  //   pathMatch : 'full'
+  // },
     {
-    path : 'Hero',
+    path : '',
     component : Layout,
     loadChildren: () => import('../components/hero/hero-module').then((m) => m.HeroModule)
   },

@@ -2,7 +2,8 @@
   [ngClass]="isHeroModule() ? 'h-[400px] md:h-screen bg-cover bg-center relative transition-all duration-1000 bannersec' : 'bg-cover bg-center relative transition-all duration-1000 bannersec'"
 >
   <!-- Background image transition -->
- @if(isHeroModule()){ <div style="position:absolute; inset:0; z-index:0">
+ @if(isHeroModule()){ 
+  <div style="position:absolute; inset:0; z-index:0">
     <img
       *ngFor="let img of imageList; let i = index"
       [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
