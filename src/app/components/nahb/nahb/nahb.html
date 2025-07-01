@@ -16,7 +16,7 @@
     <div
       *ngFor="let project of data.projects; let i = index"
       #projectItem
-      class="inline-block 2xl:min-w-[450px] 2xl:min-h-[450px] min-h-[300px] min-w-[300px] max-w-[300px] 2xl:max-w-[470px] relative group overflow-hidden cursor-pointer bg-[f8f8f8] mainimgContent"
+      class="inline-block 2xl:min-w-[450px] 2xl:min-h-[450px] min-h-[300px] min-w-[300px] max-w-[300px] relative group overflow-hidden cursor-pointer bg-[f8f8f8] mainimgContent"
       [@fadeInRight]="isVisible(i) ? 'in' : null"
       (click)="openLink(project.link)"
     >
