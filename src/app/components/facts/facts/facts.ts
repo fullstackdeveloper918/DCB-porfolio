@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { pageData } from '../../../utils/Data';
-import { NgClass, NgFor, NgIf } from '@angular/common';
 import { FactsService } from '../../../core/services/facts';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-facts',
-  imports: [NgClass,NgIf,NgFor, RouterLink],
+  imports: [RouterLink],
   templateUrl: './facts.html',
   styleUrl: './facts.css'
 })

@@ -1,5 +1,4 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { ScrollImage } from '../../scroll-image/scroll-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { fadeInOutAnimation } from '../../../utils/common-functions';
@@ -11,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-about-us',
-  imports: [ScrollImage, Awards],
+  imports: [Awards],
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
   animations: [fadeInOutAnimation],

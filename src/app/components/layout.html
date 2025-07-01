@@ -6,7 +6,7 @@
 
       <img
       *ngIf="!imagesLoaded"
-      src="20181021-Fitzpatrick-Sugarloaf-Castlecrag__JG_5188-min.jpg"
+      src="B8.jpg"
       class="w-full h-full object-cover absolute top-0 left-0"
     />
 
@@ -42,9 +42,9 @@
 
 
     <nav [ngClass]="isHeroModule() ? 'hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg' : 'hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg' ">
-      <a href="#" class="hover:underline">Home</a>
-      <a href="about-dcb" class="hover:underline">About Us</a>
-      <a href="projects" class="hover:underline">Projects</a>
+      <a routerLink="" class="hover:underline">Home</a>
+      <a routerLink="about-dcb" class="hover:underline">About Us</a>
+      <a routerLink="/projects" class="hover:underline">Projects</a>
       <a href="https://dcbinteriors.com.au/" target="_blank" rel="noopener noreferrer" class="hover:underline">
         Interiors
       </a>
@@ -55,12 +55,12 @@
       class="absolute top-full left-[-770%] bg-white shadow-xl  2xl:w-[800px] xl:w-[600px] lg:w-[500px] p-6 z-50 hidden group-hover:flex gap-6 xl:gap-12 transition-all duration-300"
     >
       <div class="flex flex-col gap-3 w-1/2 text-black text-sm">
-        <a href="/before-you-build" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Before Building</a>
-        <a href="/architects" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Architects</a>
-        <a href="/timing-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Timing to Consider</a>
-        <a href="/expenses-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Expenses to Consider</a>
-        <a href="/housekeeping" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Housekeeping</a>
-        <a href="/alterations" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Alterations & Additions</a>
+        <a routerLink="/before-you-build" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Before Building</a>
+        <a routerLink="/architects" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Architects</a>
+        <a routerLink="/timing-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Timing to Consider</a>
+        <a routerLink="/expenses-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Expenses to Consider</a>
+        <a routerLink="/housekeeping" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Housekeeping</a>
+        <a routerLink="/alterations" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Alterations & Additions</a>
       </div>
       <div class="w-3/2 relative cursor-pointer ">
         <img
@@ -68,15 +68,15 @@
           alt="Facts Preview"
           class="w-full h-full object-cover"
         />
-        <a href="/facts" class="inline-block mt-3 text-black bg-white px-2 py-1 font-normal hover:underline absolute left-4 bottom-4 text-sm">
+        <a routerLink="/facts" class="inline-block mt-3 text-black bg-white px-2 py-1 font-normal hover:underline absolute left-4 bottom-4 text-sm">
           Facts ⟶
         </a>
       </div>
     </div>
   </div>
 
-      <a href="20-clubs" class="hover:underline lg:text-xs 2xl:text-lg">NAHB</a>
-      <a href="contact-us" class="hover:underline lg:text-xs 2xl:text-lg">Contact Us</a>
+      <a routerLink="/20-clubs" class="hover:underline lg:text-xs 2xl:text-lg">NAHB</a>
+      <a routerLink="/contact-us" class="hover:underline lg:text-xs 2xl:text-lg">Contact Us</a>
     </nav>
     </div>
     
@@ -90,11 +90,11 @@
 
     <div class="hidden md:flex items-center gap-2 lg:gap-4 sm:text-[10px] lg:text-xs 2xl:text-lg">
       <a class="flex items-center gap-[15px] lg:gap-2  border-[#fff] border-right md:pr-4"
-      href="https://diary.tradiesdiary.com/" target="_blank"  rel="noopener noreferrer"
+      routerLink="https://diary.tradiesdiary.com/" target="_blank"  rel="noopener noreferrer"
 >
         <i class="fas fa-user"></i> CLIENT LOGIN
     </a>
-      <a href="tel:+61283993333" class="flex items-center gap-[15px] lg:gap-2">
+      <a routerLink="tel:+61283993333" class="flex items-center gap-[15px] lg:gap-2">
       <i class="fas fa-phone-alt"></i> +61 2 8399 3333
     </a>
     </div>

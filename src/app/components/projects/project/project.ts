@@ -1,13 +1,12 @@
-import { NgClass, NgIf } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import {  NgIf } from '@angular/common';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { particularProjectImages } from '../../../utils/Data';
 import { slideInUp, zoomIn } from '../../../utils/common-functions';
 import { ProjectService } from '../../../core/services/project';
 
 @Component({
   selector: 'app-project',
-  imports: [NgIf, NgClass],
+  imports: [NgIf],
   templateUrl: './project.html',
   styleUrl: './project.css',
   animations : [zoomIn, slideInUp]

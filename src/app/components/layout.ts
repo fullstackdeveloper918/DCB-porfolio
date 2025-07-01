@@ -2,7 +2,7 @@ import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { MobileSidebar } from './mobile-sidebar/mobile-sidebar';
 import { Footer } from './footer/footer';
-import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Home } from '../core/services/home';
 import { HomeResponse, ImageItem } from '../core/interfaces/home.interface';
@@ -10,7 +10,7 @@ import { fadeInOutAnimation } from '../utils/common-functions';
 
 @Component({
   selector: 'app-layout',
-  imports: [NgIf, MobileSidebar,Footer, NgFor, RouterOutlet, NgClass, NgStyle],
+  imports: [NgIf, MobileSidebar,Footer, NgFor, RouterOutlet, NgClass, NgStyle, RouterLink],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
   animations: [fadeInOutAnimation],

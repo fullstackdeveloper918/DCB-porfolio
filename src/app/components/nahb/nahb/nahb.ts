@@ -1,7 +1,7 @@
-import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
-import { Router, RouterLink } from '@angular/router';
+import { SafeHtml } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { ProjectsData } from '../../../utils/Data';
 import { fadeInRight } from '../../../utils/common-functions';
 import { NahbService } from '../../../core/services/nahb';
@@ -9,7 +9,7 @@ import { Builder20ClubData } from '../../../core/interfaces/nahb.interface';
 
 @Component({
   selector: 'app-nahb',
-  imports: [NgIf, RouterLink, NgFor, NgStyle],
+  imports: [NgIf,NgFor],
   templateUrl: './nahb.html',
   styleUrl: './nahb.css',
   animations : [fadeInRight]

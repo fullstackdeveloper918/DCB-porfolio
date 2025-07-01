@@ -2,13 +2,13 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OurReference } from '../../../core/services/our-reference';
 import { referencesData, videosData, housreviwes, OurRefercneProjects } from '../../../utils/Data';
 import { Awards } from '../../about-us/awards/awards';
-import { NgFor, NgIf, NgClass } from '@angular/common';
+import {NgClass } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-our-reference-1',
-  imports: [ReactiveFormsModule, NgFor, NgIf, NgClass, Awards, RouterLink],
+  imports: [ReactiveFormsModule, NgClass, Awards, RouterLink],
   templateUrl: './our-reference-1.html',
   styleUrl: './our-reference-1.css'
 })
