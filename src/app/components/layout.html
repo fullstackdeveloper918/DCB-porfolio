@@ -49,18 +49,18 @@
         Interiors
       </a>
        <div class="relative group">
-    <a class="hover:underline">Facts <i class="fa-solid fa-angle-down text-[13px]"></i></a>
+    <a class="hover:underline">Facts <i class="fa-solid fa-angle-down xl:text-[13px] text-[8px]"></i></a>
 
     <div
-      class="absolute top-full left-[-770%] bg-white shadow-xl  2xl:w-[800px] xl:w-[600px] lg:w-[500px] p-6 z-50 hidden group-hover:flex gap-6 xl:gap-12 transition-all duration-300"
+      class="absolute menudropdoen top-full left-[-770%] bg-white shadow-xl  2xl:w-[800px] xl:w-[600px] lg:w-[500px] p-6 z-50 hidden group-hover:flex gap-6 xl:gap-12 transition-all duration-300"
     >
       <div class="flex flex-col gap-3 w-1/2 text-black text-sm">
-        <a href="/before-you-build" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Before Building</a>
-        <a href="/architects" class="hover:underline transition-colors  lg:text-xs 2xl:text-lg font-light">Architects</a>
-        <a href="/timing-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Timing to Consider</a>
-        <a href="/expenses-to-consider" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Expenses to Consider</a>
-        <a href="/housekeeping" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Housekeeping</a>
-        <a href="/alterations" class="hover:underline transition-colors lg:text-xs 2xl:text-lg font-light">Alterations & Additions</a>
+        <a href="/before-you-build" class="hover:underline transition-colors text-[10px] 2xl:text-lg font-light">Before Building</a>
+        <a href="/architects" class="hover:underline transition-colors  text-[10px] 2xl:text-lg font-light">Architects</a>
+        <a href="/timing-to-consider" class="hover:underline transition-colors text-[10px] 2xl:text-lg font-light">Timing to Consider</a>
+        <a href="/expenses-to-consider" class="hover:underline transition-colors text-[10px] 2xl:text-lg font-light">Expenses to Consider</a>
+        <a href="/housekeeping" class="hover:underline transition-colors text-[10px] 2xl:text-lg font-light">Housekeeping</a>
+        <a href="/alterations" class="hover:underline transition-colors text-[10px]  2xl:text-lg font-light">Alterations & Additions</a>
       </div>
       <div class="w-3/2 relative cursor-pointer ">
         <img
@@ -82,6 +82,7 @@
     
     
       <button
+      style="color: white"
       [ngClass]="isHeroModule() ? ' md:hidden text-white text-2xl ' : 'md:hidden text-black text-2xl' "
     (click)="toggleMobileMenu()"
     >
