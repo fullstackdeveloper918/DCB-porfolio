@@ -28,7 +28,7 @@
 <app-mobile-sidebar [isOpen]="showMobileMenu" (close)="toggleMobileMenu()"></app-mobile-sidebar>
 
   <!-- Navbar -->
-  <div [ngClass]="isHeroContactUs() ? 'absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec' : 'z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-black max-w-full mx-auto '">
+  <div class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 xl:px-10 py-2 xl:py-4 2xl:py-1 text-white max-w-full mx-auto headersec">
     <div class="loogmenu flex justify-start items-center gap-4  lg:gap-10 2xl:gap-15">
 
       <div (click)="goToHomePage()" class="font-bold tracking-widest w-full max-w-[100px] sm:max-w-[140px] lg:max-w-[180px] 2xl:max-w-[360px] relative  top-0 xs:top-2 lg:top-4 2xl:top-8 cursor-pointer">
@@ -36,7 +36,7 @@
         src="/DCB-logo.png"
         alt="DCB Logo"
         class=""
-        [ngStyle]="isHeroContactUs() ? { filter: 'invert(1)' } : { filter: 'unset' }"
+        [ngStyle]="isHeroContactUs() ? { filter: 'invert(1)' } : { filter: 'invert(1)' }"
       />
     </div>
 
@@ -44,12 +44,12 @@
     <nav [ngClass]="isHeroModule() ? 'hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg' : 'hidden md:flex gap-2 lg:gap-6 font-light sm:text-[10px] lg:text-xs 2xl:text-lg' ">
       <a href="#" class="hover:underline">Home</a>
       <a href="about-dcb" class="hover:underline">About Us</a>
-      <a href="projects" class="hover:underline">Projects</a>
+      <a href="projects" class="hover:underline">Projects </a>
       <a href="https://dcbinteriors.com.au/" target="_blank" rel="noopener noreferrer" class="hover:underline">
         Interiors
       </a>
        <div class="relative group">
-    <a class="hover:underline">Facts</a>
+    <a class="hover:underline">Facts <i class="fa-solid fa-angle-down text-[13px]"></i></a>
 
     <div
       class="absolute top-full left-[-770%] bg-white shadow-xl  2xl:w-[800px] xl:w-[600px] lg:w-[500px] p-6 z-50 hidden group-hover:flex gap-6 xl:gap-12 transition-all duration-300"

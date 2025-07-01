@@ -48,7 +48,24 @@
 .productImage::-webkit-scrollbar-thumb:hover {
   background: #ffffff; 
 }
-
+.bannerImage{
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.bannerImage::after{
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: #000000b0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 @media (max-width:1536px){
   .productImage>div:nth-child(even) img{
   height: 18rem;
@@ -77,6 +94,9 @@
 .productImage  > div{
     width: 100%;
     max-width: 100%;
+}
+.bannerImage{
+  min-height: 190px;
 }
 }
 

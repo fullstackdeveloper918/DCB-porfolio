@@ -1,5 +1,11 @@
+
+<section class="px-4 pt-30 xl:pb-20 pb-10 text-center bg-[#f9f9f9] bannerImage" style="background: url(https://www.dcb.com.au/wp-content/uploads/2023/09/project-11-2.jpg);" >
+  <h1 class="text-5xl font-bold mb-2 text-white relative z-10">Projects</h1>
+  <div class="w-7 md:w-16 h-[2px] bg-white mx-auto mt-6 mb-10 relative z-10"></div>
+</section>
+<section class="px-4 text-center">
 <section class="px-4 2xl:py-20 py-10" #sectionContainer>
-    <h1 class=" text-3xl md:text-6xl xl:text-8xl font-bold mt-2 xl:mt-4 mb-2 text-black uppercase">Projects</h1>
+    <!-- <h1 class=" text-3xl md:text-6xl xl:text-8xl font-bold mt-2 xl:mt-4 mb-2 text-black uppercase">Projects</h1> -->
 
   <!-- <div class="w-7 md:w-16 h-[2px] bg-black mx-auto mt-6 mb-10"></div> -->
 
@@ -22,10 +28,10 @@
                <!-- absolute inset-0 bg-[#000000A8]         opacity-0  -->
       <div
         *ngIf="project.title"
-        class="uppercase group-hover:opacity-100 transition duration-300 flex items-end justify-start text-black px-0 py-6"
+        class="uppercase group-hover:opacity-100 transition duration-300 flex items-start justify-start text-black px-0 py-6"
       >
         <div>
-          <h2 class="text-lg md:text-md xl:text-xl font-semibold">{{ project.title }}</h2>
+          <h2 class="text-lg md:text-md xl:text-xl font-semibold text-left">{{ project.title }}</h2>
           <p class="mt-1 text-sm">See Project ⟶</p>
         </div>
       </div>
