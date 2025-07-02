@@ -56,6 +56,7 @@ export class Layout {
     return this.route.routeConfig?.path == 'Home';
   }
 
+
   isHeroContactUs(): boolean {
     const url = this.router.url;
     return url.includes('Home') || url.includes('contact-us') || url.includes('projects/particular') || url.includes('our-references/2');
@@ -68,5 +69,10 @@ export class Layout {
       this.router.navigate(['/'])
     }
 
+
+    isOurReference(): boolean {
+    const url = this.router.url;
+    return url.includes('our-references/1');
+  }
 
 }

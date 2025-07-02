@@ -4,6 +4,7 @@ import { OurReference } from '../../../core/services/our-reference';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { housreviwes, OurRefercneProjects, referencesData, videosData } from '../../../utils/Data';
 import { Awards } from "../../about-us/awards/awards";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-our-references',
@@ -17,19 +18,58 @@ data:any
 selectedCategory = 'RESIDENTIAL';
 referencesData = referencesData;
 videosData = videosData;
+passwordForm! : FormGroup
+isLogin : boolean = false
+
 
 houseimages:any = housreviwes
 projects :any 
 = OurRefercneProjects
-constructor(private referenceService : OurReference){}
+constructor(private referenceService : OurReference , private router : Router){}
 
 
 
 ngOnInit() {
+  this.checkforSession();
   this.getReferenceData();
   this.getRefrerenceProjects();
+  this.initForm();
+
 }
 
+checkforSession(){
+ const secureSession =  localStorage.getItem('secureSession')
+ console.log('securesession', secureSession)
+ if(secureSession){
+ this.isLogin = true;
+ console.log('is loing', this.isLogin)
+ }
+}
+
+
+  onSubmit(){
+    if(this.passwordForm.valid){
+      this.referenceService.secureForm(this.passwordForm.value.password).subscribe(
+        (res: any) => {
+          if(res.status){
+          const expiry = new Date().getTime() + 60 * 60 * 1000;
+          localStorage.setItem('secureSession', JSON.stringify({ expires: expiry }));
+          this.checkforSession();
+          }
+        },
+        (err) => {
+          alert('Password is incorrect');
+        }
+      );
+    }
+  }
+
+
+  initForm() {
+  this.passwordForm = new FormGroup({
+    password: new FormControl('', [Validators.required])
+  });
+}
 
 
 getReferenceData(){

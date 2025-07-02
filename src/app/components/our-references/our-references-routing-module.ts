@@ -8,18 +8,18 @@ import { AuthGuard } from '../../core/guards/auth.guard';
 const routes: Routes = [
   {
    path : '',
-   redirectTo : 'secret-key',
+   redirectTo : '1',
    pathMatch : 'full'
   },
   {
     path: '1',
     component : OurReferences,
-    canActivate : [AuthGuard]
+    // canActivate : [AuthGuard]
   },
-  {
-    path : 'secret-key',
-    component : SecretKey
-  }, 
+  // {
+  //   path : 'secret-key',
+  //   component : SecretKey
+  // }, 
   {
     path : '2', 
     component : OurReference1

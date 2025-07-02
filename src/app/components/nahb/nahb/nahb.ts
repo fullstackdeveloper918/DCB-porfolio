@@ -65,11 +65,11 @@ export class Nahb {
 
   // Scroll horizontally when wheel is triggered anywhere in section
  if (!this.isMobileDevice()) {
-    this.sectionContainer.nativeElement.addEventListener(
-      'wheel',
-      this.handleWheelEvent,
-      { passive: false }
-    );
+   this.scrollContainer.nativeElement.addEventListener(
+  'wheel',
+  this.handleWheelEvent,
+  { passive: false }
+);
   }
 }
 
