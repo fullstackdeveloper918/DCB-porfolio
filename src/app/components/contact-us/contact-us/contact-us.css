@@ -10,6 +10,14 @@
     content: '';
     z-index: 1;
 }
+
+@media (min-width:1800px){
+    .banerDivconatct{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+}
 @media (max-width:991px){
     .formtab textarea {
     height: 60px;
