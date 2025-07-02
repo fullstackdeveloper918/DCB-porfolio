@@ -12,7 +12,7 @@
 }
 
 .productImage>div img {
-     height: 100%;
+     height: 440px;
 }
 
 .productImage>div:nth-child(2n) {
@@ -70,6 +70,9 @@
   .productImage>div:nth-child(even) img{
   height: 18rem;
 }
+.productImage>div img {
+     height: 360px;
+}
 .productImage {
     height: calc(100vh - 18vw);
 }
@@ -78,6 +81,9 @@
 @media (max-width:1366px){
   .productImage>div:nth-child(even) img{
   height: 13rem;
+}
+.productImage>div img {
+     height: 16rem;
 }
 }
 
@@ -88,7 +94,7 @@
     width: 100%;
     align-items: center;
 }
-.productImage>div:nth-child(even) img{
+.productImage>div:nth-child(even) img, .productImage>div img{
   height: 100%;
 }
 .productImage  > div{
