@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Auth } from '../../../core/services/auth';
 import { ContactInfo } from '../../../core/interfaces/contact.interface';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -9,8 +9,9 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
   templateUrl: './contact-us.html',
   styleUrl: './contact-us.css'
 })
-export class ContactUs implements OnInit {
-
+export class ContactUs implements OnInit, AfterViewInit {
+    @ViewChild('leftScroll') leftScrollRef!: ElementRef;
+  @ViewChild('rightScroll') rightScrollRef!: ElementRef;
   data! : ContactInfo
     contactForm!: FormGroup;
 
@@ -29,6 +30,28 @@ export class ContactUs implements OnInit {
     message: new FormControl('', [Validators.required]),
   });
   }
+
+   ngAfterViewInit(): void {
+  const left = this.leftScrollRef.nativeElement;
+  const right = this.rightScrollRef.nativeElement;
+
+  right.addEventListener(
+    'wheel',
+    (event: WheelEvent) => {
+      const isLeftScrollable =
+        left.scrollTop + left.clientHeight < left.scrollHeight;
+
+      if (isLeftScrollable) {
+        event.preventDefault();
+        left.scrollTop += event.deltaY;
+      }
+      // If left is fully scrolled, do NOT prevent default
+      // so rightScroll can naturally scroll
+    },
+    { passive: false }
+  );
+}
+
 
   getContactUsData() {
     this.authService.getContactUsData().subscribe((res: ContactInfo) => {
