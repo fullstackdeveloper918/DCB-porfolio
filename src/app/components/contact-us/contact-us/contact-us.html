@@ -1,27 +1,27 @@
-<section class=" mx-auto">
+<section class=" mx-auto ">
   <!-- Heading (stays outside the background image) -->
 
 
   <!-- Background Wrapper -->
   <div
-    class="bg-[url('https://www.dcb.com.au/wp-content/uploads/2020/05/contact_us_img.jpg')] bg-cover bg-center bg-no-repeat"
+    class="bg-[url('https://www.dcb.com.au/wp-content/uploads/2020/05/contact_us_img.jpg')] bg-cover bg-center bg-no-repeat overlayDiv"
   >
     <!-- Grid Layout -->
-    <div class="grid grid-cols-12 grid-rows-1 ">
+    <div class="grid grid-cols-12 grid-rows-1">
       
       <!-- Left Column: Contact Info & Map -->
-      <div class="space-y-6 bg-black md:p-8 p-4 text-white col-span-12 md:col-span-5 2xl:col-span-4 xl:pt-40 md:pt-34 pt-20">
-        <div class="text-center md:text-left xl:pb-[10vw] md:pb-[5vw] pb-4">
+      <div class="space-y-6 bg-black md:p-8 p-4 text-white col-span-12 md:col-span-6 2xl:col-span-7 xl:pt-38 md:pt-25 pt-20 z-[9] md:h-screen md:overflow-y-auto ">
+        <div class="text-center md:text-left xl:mb-5 mb-2">
             <div class="text-left mb-6">
           <h1 class="text-md font-normal mb-2 text-white">{{data.title}}</h1>
           <div class="w-7 md:w-16 h-[1px] bg-[#fcfcfcbd] mr-auto mt-2"></div>
         </div>
-            <h2 class="font-semibold text-2xl md:text-4xl 2xl:text-[80px] text-left">{{data.subheading}}</h2>
+            <h2 class="font-semibold text-2xl md:text-3xl 2xl:text-[50px] text-left">{{data.subheading}}</h2>
           <p class="mt-2 text-[#fcfcfcbd] font-light text-xs 2xl:text-xl text-left">{{data.description}}</p>
         </div>
-
-        <div class="text-sm leading-relaxed ">
-          <h3 class="font-normal text-lg pb-4">{{data.company[0].name}}</h3>
+<h3 class="font-normal text-lg pb-0 mb-1">{{data.company[0].name}}</h3>
+        <div class="text-sm leading-relaxed flex flex-wrap gap-3">
+          
           <p class="flex items-center mt-2 bg-[#272727] w-[fit-content] rounded cursor-pointer">
             <i class="fas fa-phone bg-[#363636] py-2 px-2 2xl:p-4 rounded "></i>
             <a href="tel:+61283993333" class="text-white hover:text-[#ddd] px-6 py-2 2xl:text-[16px] xs:text-xs text-[8px]">+61 2 8399 3333</a>
@@ -36,14 +36,28 @@
             <span class="text-white hover:text-[#ddd] px-3 py-2 2xl:text-[16px] xs:text-xs text-[8px]">{{data.company[0].address[0].line1}}, {{data.company[0].address[0].city}} {{data.company[0].address[0].state}} {{data.company[0].address[0].postal_code}} {{data.company[0].address[0].country}}</span>
           </p>
         </div>
+
+
+             <div class="2xl:h-[400px] lg:h-[300px] h-[200px] w-full min-[200px] ">
+            <iframe
+        src="https://maps.google.com/maps?q=David%20Campbell%20Building%20Pty%20Ltd%2011U%2F175%20Lower%20Gibbes%20St%2C%20Roseville%20NSW%202067%2C%20Australia&t=m&z=10&output=embed&iwloc=near"
+        width="100%"
+        height="100%"
+        style="border:0; filter: grayscale(100%);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+        </div>
       </div>
 
       <!-- Right Column: Contact Form -->
-      <div class=" p-4 md:p-10 shadow-md md:col-span-7 col-span-12 2xl:col-span-8 flex items-end justify-end">
+      <div class=" p-4 md:p-10 shadow-md md:col-span-6 col-span-12 2xl:col-span-5 flex items-end justify-center z-[9]">
         <form
          [formGroup]="contactForm" 
         (ngSubmit)="onSubmit()" 
-         class="space-y-5 max-w-[400px] 2xl:max-w-[600px] ml-auto bg-white w-full 2xl:py-10 2xl:px-8 py-8 px-5 2xl:rounded-2xl rounded-xl">
+         class="space-y-5 max-w-[400px] 2xl:max-w-[600px] bg-white w-full 2xl:py-10 2xl:px-8 py-8 px-5 2xl:rounded-2xl rounded-xl formtab">
           <input
             type="text"
             placeholder="Your Name *"
@@ -90,7 +104,7 @@
   </div>
 
           <!-- Google Map Embed -->
-        <div class="md:h-[500px] h-[400px] w-full min-[400px] ">
+        <!-- <div class="md:h-[500px] h-[400px] w-full min-[400px] ">
             <iframe
         src="https://maps.google.com/maps?q=David%20Campbell%20Building%20Pty%20Ltd%2011U%2F175%20Lower%20Gibbes%20St%2C%20Roseville%20NSW%202067%2C%20Australia&t=m&z=10&output=embed&iwloc=near"
         width="100%"
@@ -101,5 +115,5 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
-        </div>
+        </div> -->
 </section>

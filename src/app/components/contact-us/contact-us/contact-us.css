@@ -1,0 +1,29 @@
+.overlayDiv{
+    position: relative;
+}
+.overlayDiv::before{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #000, transparent);
+    height: 100%;
+    width: 100%;
+    content: '';
+    z-index: 1;
+}
+@media (max-width:767px){
+    .formtab textarea {
+    height: 60px;
+    font-size: 11px;
+}
+
+.formtab button {
+    padding-inline: 20px !important;
+    padding-block: 5px !important;
+    font-size: 13px !important;
+    margin-bottom: 0px;
+}
+
+.formtab input {
+    font-size: 10px;
+}
+}
