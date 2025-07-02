@@ -31,26 +31,49 @@ export class ContactUs implements OnInit, AfterViewInit {
   });
   }
 
-   ngAfterViewInit(): void {
+  
+ngAfterViewInit(): void {
   const left = this.leftScrollRef.nativeElement;
   const right = this.rightScrollRef.nativeElement;
 
+  // Scroll inside right panel
   right.addEventListener(
     'wheel',
     (event: WheelEvent) => {
-      const isLeftScrollable =
+      const isLeftScrollableDown =
         left.scrollTop + left.clientHeight < left.scrollHeight;
+      const isLeftScrollableUp = left.scrollTop > 0;
 
-      if (isLeftScrollable) {
+      if (event.deltaY > 0 && isLeftScrollableDown) {
+        // Scroll down: right → left
+        event.preventDefault();
+        left.scrollTop += event.deltaY;
+      } else if (event.deltaY < 0 && isLeftScrollableUp && right.scrollTop === 0) {
+        // Scroll up: right → left (when right is at top)
         event.preventDefault();
         left.scrollTop += event.deltaY;
       }
-      // If left is fully scrolled, do NOT prevent default
-      // so rightScroll can naturally scroll
+    },
+    { passive: false }
+  );
+
+  // Scroll inside left panel
+  left.addEventListener(
+    'wheel',
+    (event: WheelEvent) => {
+      const isAtBottom =
+        left.scrollTop + left.clientHeight >= left.scrollHeight && event.deltaY > 0;
+      const isAtTop = left.scrollTop === 0 && event.deltaY < 0;
+
+      if (isAtBottom || isAtTop) {
+        event.preventDefault();
+        right.scrollTop += event.deltaY;
+      }
     },
     { passive: false }
   );
 }
+
 
 
   getContactUsData() {
