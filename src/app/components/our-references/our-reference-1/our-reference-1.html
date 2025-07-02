@@ -92,9 +92,14 @@
     </div>
 
 
-    <h2 class="text-4xl xl:text-5xl 2xl:text-7xl text-left font-semibold mb-6 uppercase">Our Residential
+    <h2 class="text-4xl xl:text-5xl 2xl:text-7xl text-left font-semibold mb-6 uppercase"
+      [@fadeInOnScroll]="sectionVisibility.h2 ? 'visible' : 'hidden'"
+  #h2Section>Our Residential
     </h2>
-    <div class="projectSec grid grid-cols-1 lg:flex justify-between items-start gap-6 mb-8">
+    <div
+      [@fadeInOnScroll]="sectionVisibility.card1 ? 'visible' : 'hidden'"
+      #card1
+     class="projectSec grid grid-cols-1 lg:flex justify-between items-start gap-6 mb-8">
       <div
         class="projectcount flex justify-between items-center bg-[#252525] rounded-[8px] px-3 py-2 lg:max-w-[240px] w-full">
         <span class="font-medium text-sm ">40 </span>
@@ -153,7 +158,10 @@
 
     </div>
     
-    <div class="projectSec grid grid-cols-1 lg:flex justify-between items-start gap-6 mb-8">
+    <div
+     [@fadeInOnScroll]="sectionVisibility.card2 ? 'visible' : 'hidden'"
+  #card2 
+    class="projectSec grid grid-cols-1 lg:flex justify-between items-start gap-6 mb-8">
       <div
         class="projectcount flex justify-between items-center bg-[#252525] rounded-[8px] px-3 py-2 lg:max-w-[240px] w-full">
         <span class="font-medium text-sm ">40 </span>
@@ -212,7 +220,10 @@
 
     </div>
 
-        <div class="projectSec grid grid-cols-1 lg:flex justify-between items-start gap-6">
+        <div
+         [@fadeInOnScroll]="sectionVisibility.card3 ? 'visible' : 'hidden'"
+  #card3
+        class="projectSec grid grid-cols-1 lg:flex justify-between items-start gap-6">
       <div
         class="projectcount flex justify-between items-center bg-[#252525] rounded-[8px] px-3 py-2 lg:max-w-[240px] w-full">
         <span class="font-medium text-sm ">40 </span>

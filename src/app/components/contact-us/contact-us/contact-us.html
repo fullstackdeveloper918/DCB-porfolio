@@ -40,36 +40,43 @@
 
       <!-- Right Column: Contact Form -->
       <div class=" p-4 md:p-10 shadow-md md:col-span-7 col-span-12 2xl:col-span-8 flex items-end justify-end">
-        <form class="space-y-5 max-w-[400px] 2xl:max-w-[600px] ml-auto bg-white w-full 2xl:py-10 2xl:px-8 py-8 px-5 2xl:rounded-2xl rounded-xl">
+        <form
+         [formGroup]="contactForm" 
+        (ngSubmit)="onSubmit()" 
+         class="space-y-5 max-w-[400px] 2xl:max-w-[600px] ml-auto bg-white w-full 2xl:py-10 2xl:px-8 py-8 px-5 2xl:rounded-2xl rounded-xl">
           <input
             type="text"
             placeholder="Your Name *"
+            formControlName="name"
             class="w-full 2xl:p-3 border border-gray-300 rounded 2xl:text-[14px] text-[12px] px-2 py-2 mb-[12px] 2xl:mb-4"
             required
           />
           <input
             type="email"
             placeholder="Your Email *"
+                  formControlName="email"
             class="w-full 2xl:p-3 border border-gray-300 rounded 2xl:text-[14px] text-[12px] px-2 py-2 mb-[12px] 2xl:mb-4"
             required
           />
           <input
             type="tel"
             placeholder="Phone No *"
+                  formControlName="phone"
             class="w-full 2xl:p-3 border border-gray-300 rounded 2xl:text-[14px] text-[12px] px-2 py-2 mb-[12px] 2xl:mb-4"
             required
           />
           <textarea
             rows="4"
             placeholder="Message *"
+                  formControlName="message"
             class="w-full 2xl:p-3 border border-gray-300 rounded 2xl:text-[14px] text-[12px] px-2 py-2 mb-[12px] 2xl:mb-4"
             required
           ></textarea>
 
           <!-- Captcha Placeholder -->
-          <div class="bg-gray-200 text-gray-700 text-center py-3 rounded">
+          <!-- <div class="bg-gray-200 text-gray-700 text-center py-3 rounded">
             reCAPTCHA Placeholder
-          </div>
+          </div> -->
 
           <button
             type="submit"

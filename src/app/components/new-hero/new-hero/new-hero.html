@@ -3,12 +3,24 @@
 >
   <!-- Background image transition -->
   <div style="position:absolute; inset:0; z-index:0">
+
+    @if(!imagesLoaded){
+      <img
+      [@fadeInOut]="'visible'"
+      src="homeslider-24-23-04-25.jpg"
+      class="w-full h-full object-cover absolute top-0 left-0"
+    />
+    }
+    @if(imagesLoaded){    
+      <ng-container >
     <img
       *ngFor="let img of imageList; let i = index"
       [@fadeInOut]="currentIndex === i ? 'visible' : 'hidden'"
-      [src]="img"
+      [src]="img.image"
       class="w-full h-full object-cover absolute top-0 left-0"
     />
+        </ng-container>
+      }
   </div>
 
   <!-- Overlay -->

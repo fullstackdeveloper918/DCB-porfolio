@@ -20,6 +20,7 @@ referencesData = referencesData;
 videosData = videosData;
 passwordForm! : FormGroup
 isLogin : boolean = false
+project:string = 'residential'
 
 
 houseimages:any = housreviwes
@@ -32,7 +33,7 @@ constructor(private referenceService : OurReference , private router : Router){}
 ngOnInit() {
   this.checkforSession();
   this.getReferenceData();
-  this.getRefrerenceProjects();
+  this.getProjects('residential');
   this.initForm();
 
 }
@@ -71,6 +72,20 @@ checkforSession(){
   });
 }
 
+changeToResidentail(){
+  this.selectedCategory = "RESIDENTIAL"
+  this.getProjects('residential')
+}
+
+changeToCommercial(){
+  this.selectedCategory = "COMMERCIAL"
+  this.getProjects("commercial")
+}
+
+changeToResidentailInProgress(){
+  this.selectedCategory = "RESIDENTIAL - IN PROGRESS"
+  this.getProjects("residential_in_progress")
+}
 
 getReferenceData(){
   this.referenceService.getReferenceData().subscribe((res:any)=>{
@@ -81,8 +96,8 @@ getReferenceData(){
   });
 }
 
-getRefrerenceProjects(){
-  this.referenceService.getReferenceProjects().subscribe(res =>{
+getProjects(project:any){
+  this.referenceService.getReferenceProjects(project).subscribe(res =>{
     // this.projects = res
     console.log('res', res)
   })

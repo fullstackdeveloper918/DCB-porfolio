@@ -58,7 +58,7 @@
       'bg-black text-white': selectedCategory === 'RESIDENTIAL',
       'bg-gray-300 text-black': selectedCategory !== 'RESIDENTIAL'
     }"
-    (click)="selectedCategory = 'RESIDENTIAL'"
+    (click)="changeToResidentail()"
   >
     RESIDENTIAL
   </button>
@@ -69,7 +69,7 @@
       'bg-black text-white': selectedCategory === 'COMMERCIAL',
       'bg-gray-300 text-black': selectedCategory !== 'COMMERCIAL'
     }"
-    (click)="selectedCategory = 'COMMERCIAL'"
+    (click)="changeToCommercial()"
   >
     COMMERCIAL
   </button>
@@ -80,7 +80,7 @@
       'bg-black text-white': selectedCategory === 'RESIDENTIAL - IN PROGRESS',
       'bg-gray-300 text-black': selectedCategory !== 'RESIDENTIAL - IN PROGRESS'
     }"
-    (click)="selectedCategory = 'RESIDENTIAL - IN PROGRESS'"
+    (click)="changeToResidentailInProgress()"
   >
     RESIDENTIAL - IN PROGRESS
   </button>
@@ -88,7 +88,7 @@
 
 
   <!-- Section Heading -->
-  <h2 class="text-2xl lg:text-3xl text-left font-semibold mb-6">Residential</h2>
+  <h2 class="text-2xl lg:text-3xl text-left font-semibold mb-6">{{selectedCategory}}</h2>
 
 <!-- Project List Wrapper -->
 <div *ngFor="let project of projects" class="mb-16">

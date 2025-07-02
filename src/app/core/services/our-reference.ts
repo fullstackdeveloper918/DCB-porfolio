@@ -19,7 +19,7 @@ export class OurReference {
   }
 
    // get referece projects
-   getReferenceProjects(){
-    return this.apiService.get(apiRoutes.residential)
+   getReferenceProjects(data?: any){
+    return this.apiService.get(`${data}`)
    }
 }

@@ -14,4 +14,9 @@ export class Auth {
   getContactUsData() : Observable<ContactInfo> {
     return this.apiService.get<ContactInfo>(apiRoutes.contactForm);
   }
+
+  // POST CONTACT US
+  postContactUs(form:any){
+    return this.apiService.post(apiRoutes.submitForm, form)
+  }
 }

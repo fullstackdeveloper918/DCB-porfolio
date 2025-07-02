@@ -9,5 +9,6 @@ export const apiRoutes = {
     ourReference : 'our-reference',
     secureForm : "secure-form",
     beforeAfter : "before-after",
-    residential : "residential"
+    residential : "residential",
+    submitForm : 'submit-form'
 }

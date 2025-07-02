@@ -66,3 +66,9 @@ export const fadeInMap =  trigger('fadeInMap', [
   state('active', style({ opacity: 1 })),
   transition('inactive => active', animate('1000ms ease-in')),
 ])
+
+export const fadeinOnScroll =  trigger('fadeInOnScroll', [
+      state('hidden', style({ opacity: 0, transform: 'translateY(40px)' })),
+      state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
+      transition('hidden => visible', animate('800ms ease-out'))
+    ])
