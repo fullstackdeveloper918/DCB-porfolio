@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 })
 export class Facts implements OnInit {
 
+  companyData : any
+
   constructor(private factsService : FactsService){}
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ export class Facts implements OnInit {
   getFactsData(){
    this.factsService.getFactsData().subscribe((res:any)=>{
     console.log('data', res)
+    this.companyData = res
    })
   }
 
