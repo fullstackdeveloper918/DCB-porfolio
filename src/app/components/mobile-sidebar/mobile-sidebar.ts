@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './mobile-sidebar.css'
 })
 export class MobileSidebar {
-@Input() isOpen: boolean = false;
+  @Input() isOpen: boolean = false;
  @Output() close = new EventEmitter<void>();
  showMobileMenu: boolean = false
   navLinks = [

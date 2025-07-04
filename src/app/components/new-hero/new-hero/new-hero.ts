@@ -6,7 +6,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { MobileSidebar } from '../../mobile-sidebar/mobile-sidebar';
 import { Footernew } from '../../footernew/footernew';
 import { ImageComparisonSlider } from '../../image-comparison-slider/image-comparison-slider';
@@ -15,7 +15,7 @@ import { ImageItem, HomeResponse } from '../../../core/interfaces/home.interface
 import { Home } from '../../../core/services/home';
 @Component({
   selector: 'app-new-hero',
-  imports: [ImageComparisonSlider, NgFor, Footernew, MobileSidebar],
+  imports: [ImageComparisonSlider, NgFor, Footernew, MobileSidebar, NgClass, NgIf, MobileSidebar],
   templateUrl: './new-hero.html',
   styleUrl: './new-hero.css',
    animations: [
@@ -44,7 +44,7 @@ export class NewHero {
     $ubscription! : Subscription
   currentIndex = 0;
   private intervalId: any;
-  showMobileMenu = false;
+    showMobileMenu = false;
     imagesLoaded = false
 
 
@@ -74,8 +74,9 @@ export class NewHero {
   
 
    // TOOGLE MOBILE MENU
-  toggleMobileMenu() {
+  toggleMobileMenu(event?:any) {
   this.showMobileMenu = !this.showMobileMenu;
+  console.log('this.showMobileMenu', this.showMobileMenu)
 }
 
   ngOnDestroy() {
